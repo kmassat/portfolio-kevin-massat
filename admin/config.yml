@@ -16,7 +16,7 @@ collections:
         fields:
           - {label: "Titre hero", name: "hero_title", widget: "string"}
           - {label: "Sous-titre hero", name: "hero_subtitle", widget: "text"}
-          - {label: "Photo de profil", name: "hero_photo", widget: "image"}
+          - {label: "Photo de profil Kévin Massat", name: "hero_photo", widget: "image"}
           - {label: "Badge disponibilité", name: "hero_badge", widget: "string"}
 
       - name: "groupe_cta"
