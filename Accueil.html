@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kévin Massat — Chargé de Communication</title>
+<meta name="description" content="Portfolio de Kévin Massat, chargé de communication à Toulouse. Découvrez mes expériences, réalisations et compétences en communication digitale et marketing.">
+<link rel="icon" type="image/png" href="Images/icone_portfolio.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+.exp-card{cursor:pointer}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --yellow:#FFCD00;
+  --yellow-dark:#E6B800;
+  --yellow-soft:#FFF8D6;
+  --yellow-mid:#FFF3B0;
+  --dark:#272727;
+  --dark2:#3A3A3A;
+  --text:#272727;
+  --muted:#6B6B6B;
+  --muted-light:#9A9A9A;
+  --white:#FFFFFF;
+  --light:#F7F7F5;
+  --border:#E8E8E4;
+  --border-strong:#D0D0CA;
+  --radius:12px;
+  --radius-sm:8px;
+  --shadow:0 1px 4px rgba(39,39,39,.07),0 1px 2px rgba(39,39,39,.05);
+  --shadow-md:0 4px 16px rgba(39,39,39,.1),0 2px 4px rgba(39,39,39,.06);
+  --shadow-yellow:0 6px 20px rgba(255,205,0,.35);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo img{width:32px;height:32px;object-fit:contain}
+.nav-logo-text{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1rem;color:var(--dark);letter-spacing:-.01em}
+.nav-logo-text span{color:var(--yellow-dark)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--dark)}
+.nav-cta{background:var(--yellow);color:var(--dark);padding:.5rem 1.25rem;border-radius:100px;font-size:.85rem;font-weight:700;text-decoration:none;transition:background .2s,transform .2s,box-shadow .2s}
+.nav-cta:hover{background:var(--yellow-dark);transform:translateY(-1px);box-shadow:var(--shadow-yellow)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:.3s}
+
+/* FOCUS VISIBLE — ACCESSIBILITE */
+a:focus-visible,button:focus-visible{
+  outline:2px solid var(--yellow);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:8rem 5% 5rem;background:var(--white);position:relative;overflow:hidden}
+.hero-accent-bar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--yellow)}
+.hero-shape{position:absolute;right:-5%;top:5%;width:50%;height:90%;background:var(--light);border-radius:24px;transform:rotate(3deg);z-index:0}
+.hero-dots{position:absolute;right:6%;top:18%;width:280px;height:280px;opacity:.35;background-image:radial-gradient(var(--yellow-dark) 1.5px,transparent 1.5px);background-size:22px 22px;z-index:1;pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;position:relative;z-index:2;max-width:1200px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--yellow-soft);border:1.5px solid var(--yellow);padding:.38rem 1rem;border-radius:100px;font-size:.78rem;color:var(--dark);font-weight:600;margin-bottom:1.75rem}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1.hero-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--dark);margin-bottom:1.25rem}
+h1.hero-title em{font-style:normal;background:var(--yellow);padding:0 .15em;border-radius:4px}
+.hero-sub{font-size:1.02rem;color:var(--muted);max-width:500px;margin-bottom:2rem;line-height:1.75;font-weight:300}
+.hero-actions{display:flex;gap:.875rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-primary{background:var(--yellow);color:var(--dark);padding:.8rem 1.75rem;border-radius:100px;font-size:.92rem;font-weight:700;text-decoration:none;transition:background .2s,transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:.5rem;border:2px solid var(--yellow)}
+.btn-primary:hover{background:var(--yellow-dark);border-color:var(--yellow-dark);transform:translateY(-2px);box-shadow:var(--shadow-yellow)}
+.btn-secondary{background:var(--white);color:var(--dark);padding:.8rem 1.75rem;border-radius:100px;font-size:.92rem;font-weight:600;text-decoration:none;border:2px solid var(--dark);transition:background .2s,transform .2s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-secondary:hover{background:var(--dark);color:var(--yellow);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.stat-num{font-family:'Bricolage Grotesque',sans-serif;font-size:1.8rem;font-weight:800;color:var(--dark)}
+.stat-label{font-size:.78rem;color:var(--muted);margin-top:.1rem}
+.hero-photo-wrap{display:flex;justify-content:center;align-items:center}
+.hero-photo-frame{position:relative;width:320px;height:390px}
+.hero-photo-bg{position:absolute;inset:14px 0 0 14px;background:var(--yellow);border-radius:20px;opacity:.5}
+.hero-photo{width:100%;height:100%;object-fit:cover;border-radius:20px;position:relative;z-index:1;box-shadow:var(--shadow-md)}
+.hero-photo-badge{position:absolute;bottom:-16px;left:-16px;z-index:2;background:var(--dark);color:var(--yellow);border-radius:var(--radius);padding:.75rem 1.1rem;box-shadow:var(--shadow-md);font-size:.82rem;font-weight:700;display:flex;align-items:center;gap:.5rem;font-family:'Bricolage Grotesque',sans-serif}
+
+/* SECTIONS */
+section{padding:6rem 5%}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-size:.72rem;font-weight:700;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.6rem}
+.section-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--yellow);border-radius:2px}
+h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-.025em;color:var(--dark);margin-bottom:.75rem}
+.section-intro{color:var(--muted);font-size:.97rem;line-height:1.75;margin-bottom:3rem;max-width:540px;font-weight:300}
+
+/* EXPERIENCES */
+#experiences{background:var(--light)}
+.exp-grid{display:grid;gap:1.25rem}
+.exp-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:2rem;display:grid;grid-template-columns:1fr auto;gap:1.5rem;box-shadow:var(--shadow);transition:box-shadow .25s,transform .25s,border-color .25s;position:relative;overflow:hidden}
+.exp-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.exp-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--exp-bar-color, var(--yellow));transform:scaleY(0);transform-origin:bottom;transition:transform .3s}
+.exp-card:hover::after{transform:scaleY(1)}
+.exp-logo{width:42px;height:42px;object-fit:contain;border-radius:8px;border:1px solid var(--border);padding:4px;background:var(--white);flex-shrink:0}
+.exp-header{display:flex;align-items:flex-start;gap:.875rem;margin-bottom:.75rem;flex-wrap:wrap}
+.exp-role{font-family:'Bricolage Grotesque',sans-serif;font-size:1.08rem;font-weight:700;color:var(--dark);margin-bottom:.2rem}
+.exp-company{color:var(--dark2);font-size:.85rem;font-weight:600}
+.exp-missions{list-style:none;display:flex;flex-direction:column;gap:.35rem;margin-top:.75rem}
+.exp-missions li{font-size:.86rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.55}
+.exp-missions li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--exp-bar-color, var(--yellow));border:1.5px solid var(--exp-bar-color, var(--yellow-dark));transition:background .3s ease,border-color .3s ease}
+.exp-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;flex-shrink:0;min-width:120px}
+.exp-period{font-size:.78rem;color:var(--muted);text-align:right;line-height:1.4}
+.exp-type{font-size:.72rem;font-weight:700;padding:.3rem .75rem;border-radius:6px;white-space:nowrap;text-align:center}
+.type-cdd{background:#FEF3C7;color:#92400E}
+.type-alt{background:var(--yellow-soft);color:var(--dark);border:1px solid var(--yellow)}
+.type-stage{background:#F0FDF4;color:#166534}
+.type-benevolat{background:#F5F3FF;color:#5B21B6}
+
+/* REALISATIONS */
+#realisations{background:var(--white)}
+.real-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-bottom:3rem}
+.real-card{background:var(--light);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:box-shadow .2s,transform .2s,border-color .2s}
+.real-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);border-color:var(--yellow)}
+.real-icon{width:42px;height:42px;background:var(--yellow);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.real-icon svg{width:20px;height:20px;stroke:var(--dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.real-tag{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.4rem}
+.real-title{font-family:'Bricolage Grotesque',sans-serif;font-size:.97rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.real-desc{font-size:.84rem;color:var(--muted);line-height:1.65}
+.real-link{display:inline-flex;align-items:center;gap:.3rem;color:var(--dark);font-size:.82rem;font-weight:700;text-decoration:none;margin-top:.875rem;border-bottom:2px solid var(--yellow);padding-bottom:1px;transition:gap .2s}
+.real-link:hover{gap:.55rem}
+.articles-label{font-size:.72rem;font-weight:700;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.articles-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--yellow);border-radius:2px}
+.articles-list{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.articles-list li a{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--light);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;text-decoration:none;color:var(--body);font-size:.88rem;font-weight:500;transition:border-color .2s,background .2s}
+.articles-list li a:hover{border-color:var(--yellow);background:var(--yellow-soft)}
+.articles-list li a svg{width:14px;height:14px;stroke:var(--muted-light);flex-shrink:0;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* COMPETENCES */
+#competences{background:var(--dark)}
+#competences .section-label{color:var(--muted-light)}
+#competences .section-label::before{background:var(--yellow)}
+#competences h2.section-title{color:var(--white)}
+#competences .section-intro{color:#9A9A9A}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem}
+.skill-cat{background:#333333;border:1px solid #404040;border-radius:var(--radius);padding:1.75rem}
+.skill-cat-title{font-family:'Bricolage Grotesque',sans-serif;font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:1.1rem;padding-bottom:.75rem;border-bottom:1px solid #404040}
+.skill-pills{display:flex;flex-wrap:wrap;gap:.45rem}
+.skill-pill{background:#272727;border:1px solid #484848;border-radius:100px;padding:.3rem .8rem;font-size:.79rem;color:#C8C8C8;display:inline-flex;align-items:center;gap:.35rem;transition:border-color .2s,background .2s,color .2s}
+.skill-pill:hover{border-color:var(--yellow);background:#3A3A2A;color:var(--yellow)}
+.skill-years{font-size:.7rem;color:var(--yellow);font-weight:700}
+
+/* Skill pills — hover couleur marque */
+.skill-pill[data-brand]:hover{border-color:var(--brand-color);color:var(--brand-color)}
+.skill-pill[data-brand]:hover .skill-years{color:var(--brand-color)}
+/* Couleurs claires — texte sombre au hover */
+.skill-pill[data-brand="arena"]:hover,.skill-pill[data-brand="thot"]:hover{color:var(--dark)}
+.skill-pill[data-brand="arena"]:hover .skill-years,.skill-pill[data-brand="thot"]:hover .skill-years{color:var(--dark)}
+
+/* A PROPOS */
+#apropos{background:var(--white)}
+.apropos-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
+.apropos-text p{color:var(--muted);line-height:1.8;margin-bottom:1.25rem;font-size:.97rem;font-weight:300}
+.apropos-text p strong{color:var(--dark);font-weight:600}
+.soft-skills{display:flex;flex-direction:column;gap:.875rem}
+.soft-skill{
+  background:var(--light);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:1.1rem 1.4rem 1.1rem calc(1.4rem + 4px);
+  position:relative;
+  overflow:hidden;
+}
+.soft-skill::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:var(--yellow);
+  z-index:3;
+  transition:opacity .3s ease;
+}
+.soft-skill::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:#272727;
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  z-index:1;
+}
+.soft-skill:hover::before{
+  opacity:0;
+}
+.soft-skill:hover::after{
+  transform:translateX(0);
+}
+.soft-skill-title,.soft-skill-desc{position:relative;z-index:2}
+.soft-skill:hover .soft-skill-title{color:var(--white)}
+.soft-skill:hover .soft-skill-desc{color:rgba(255,255,255,.7)}
+.soft-skill-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.9rem;margin-bottom:.3rem;color:var(--dark);transition:color .4s ease}
+.soft-skill-desc{font-size:.82rem;color:var(--muted);line-height:1.6;transition:color .4s ease}
+
+/* CONTACT */
+#contact{background:var(--light)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start}
+.contact-info p{color:var(--muted);margin-bottom:2rem;line-height:1.75;font-size:.97rem;font-weight:300}
+.contact-links{display:flex;flex-direction:column;gap:.75rem}
+.contact-link{display:flex;align-items:center;gap:.875rem;color:var(--dark);text-decoration:none;padding:.875rem 1.1rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:.88rem;font-weight:500;transition:border-color .2s,box-shadow .2s;box-shadow:var(--shadow)}
+.contact-link:hover{border-color:var(--yellow);box-shadow:var(--shadow-yellow)}
+.contact-link-icon{width:34px;height:34px;border-radius:8px;background:var(--yellow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-link-icon svg{width:16px;height:16px;stroke:var(--dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.contact-form{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+.form-group label{font-size:.78rem;color:var(--dark);font-weight:600}
+.form-group .req{color:var(--yellow-dark)}
+.form-group input,.form-group textarea{background:var(--light);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:.7rem .9rem;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;transition:border-color .2s,box-shadow .2s;outline:none;resize:none;width:100%}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,205,0,.15);background:var(--white)}
+.form-group textarea{min-height:100px}
+.rgpd-block{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:1.25rem;padding:.875rem;background:var(--yellow-soft);border-radius:var(--radius-sm);border:1.5px solid var(--yellow)}
+.rgpd-block input[type="checkbox"]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--dark);cursor:pointer}
+.rgpd-block label{font-size:.77rem;color:var(--dark2);line-height:1.55;cursor:pointer}
+.form-submit{background:var(--yellow);color:var(--dark);border:none;border-radius:100px;padding:.8rem 1.75rem;font-size:.9rem;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;width:100%}
+.form-submit:hover{background:var(--yellow-dark);transform:translateY(-1px);box-shadow:var(--shadow-yellow)}
+.form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* HOVER LOGOS CONTACT */
+.contact-link-icon{position:relative;overflow:hidden;transition:background .3s ease}
+.contact-link-icon img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:5px;opacity:0;transition:opacity .25s ease;z-index:2}
+.contact-link-icon svg{transition:opacity .25s ease, transform .3s ease;position:relative;z-index:1}
+.contact-link:hover .contact-link-icon img{opacity:1}
+.contact-link:hover .contact-link-icon svg{opacity:0}
+
+/* Gmail — bordure dégradé Google */
+.contact-link.link-gmail{position:relative;z-index:1;background:var(--white)}
+.contact-link.link-gmail::after{
+  content:'';
+  position:absolute;
+  inset:-1.5px;
+  border-radius:calc(var(--radius-sm) + 1.5px);
+  border:1.5px solid transparent;
+  background:linear-gradient(135deg, #4181ED, #C0211F, #E44134, #F4B605, #32A350) border-box;
+  -webkit-mask:linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:0;
+  transition:opacity .3s ease;
+  pointer-events:none;
+}
+.contact-link.link-gmail:hover{
+  border-color:transparent;
+  box-shadow:0 4px 15px rgba(65,129,237,.2);
+}
+.contact-link.link-gmail:hover::after{
+  opacity:1;
+}
+.contact-link:hover .icon-gmail{background:transparent}
+
+/* LinkedIn — bordure bleue */
+.contact-link.link-linkedin:hover{border-color:#007AB5;box-shadow:0 4px 15px rgba(0,122,181,.25)}
+.contact-link:hover .icon-linkedin{background:#FFFFFF;border:2px solid transparent}
+
+/* Téléphone — bordure verte */
+.contact-link.link-tel:hover{border-color:#22C55E;box-shadow:0 4px 15px rgba(34,197,94,.25)}
+.contact-link:hover .icon-tel{background:#22C55E}
+
+/* CV — bordure orange */
+.contact-link.link-cv:hover{border-color:#F97316;box-shadow:0 4px 15px rgba(249,115,22,.25)}
+.contact-link:hover .icon-cv{background:#F97316}
+
+/* ANIMATIONS ICONES TEL & CV */
+.contact-link:hover .icon-tel svg{
+  opacity:1;
+  animation:phone-ring .6s ease;
+}
+.contact-link:hover .icon-cv svg{
+  opacity:1;
+  animation:cv-download .6s ease;
+}
+@keyframes phone-ring{
+  0%{transform:rotate(0) scale(1)}
+  10%{transform:rotate(15deg) scale(1.1)}
+  20%{transform:rotate(-15deg) scale(1.1)}
+  30%{transform:rotate(12deg) scale(1.05)}
+  40%{transform:rotate(-12deg) scale(1.05)}
+  50%{transform:rotate(8deg) scale(1)}
+  60%{transform:rotate(-8deg)}
+  70%{transform:rotate(4deg)}
+  80%{transform:rotate(-4deg)}
+  100%{transform:rotate(0) scale(1)}
+}
+@keyframes cv-download{
+  0%{transform:translateY(0)}
+  20%{transform:translateY(-6px)}
+  40%{transform:translateY(3px)}
+  55%{transform:translateY(-3px)}
+  70%{transform:translateY(1px)}
+  85%{transform:translateY(-1px)}
+  100%{transform:translateY(0)}
+}
+
+/* FOOTER */
+footer{padding:2rem 5%;border-top:4px solid var(--yellow);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;background:var(--dark)}
+.footer-copy{font-size:.8rem;color:#9A9A9A}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:.8rem;color:#9A9A9A;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--yellow)}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* CURSOR TRAIL */
+canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
+@media(max-width:960px){canvas#trailCanvas{display:none}}
+
+/* TRANSITION DE PAGE */
+.page-transition{position:fixed;top:0;left:0;width:100%;height:100%;z-index:10000;pointer-events:none;display:flex;overflow:hidden}
+.page-transition-bar{position:relative;flex:1 1 0;min-width:0;transform:scaleY(0);will-change:transform;backface-visibility:hidden;transform-style:preserve-3d}
+.page-transition-bar::after{content:'';position:absolute;top:0;right:-2px;width:4px;height:100%;background:inherit}
+.page-transition-bar:last-child::after{display:none}
+.page-transition.leaving .page-transition-bar{transform:scaleY(1);transform-origin:bottom}
+.page-transition.covered .page-transition-bar{transform:scaleY(1);transform-origin:top}
+.page-transition.entering .page-transition-bar{transform:scaleY(0);transform-origin:top}
+.page-transition-bar:nth-child(1){background:var(--dark);transition:transform .6s cubic-bezier(.77,0,.18,1) 0s}
+.page-transition-bar:nth-child(2){background:var(--yellow);transition:transform .6s cubic-bezier(.77,0,.18,1) .08s}
+.page-transition-bar:nth-child(3){background:var(--white);transition:transform .6s cubic-bezier(.77,0,.18,1) .16s}
+.page-transition-bar:nth-child(4){background:var(--yellow-dark);transition:transform .6s cubic-bezier(.77,0,.18,1) .24s}
+.page-transition-bar:nth-child(5){background:var(--dark2);transition:transform .6s cubic-bezier(.77,0,.18,1) .32s}
+.page-transition-bar:nth-child(6){background:var(--yellow-soft);transition:transform .6s cubic-bezier(.77,0,.18,1) .4s}
+.page-transition-bar:nth-child(7){background:var(--light);transition:transform .6s cubic-bezier(.77,0,.18,1) .48s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .hero-photo-wrap{order:-1}
+  .hero-photo-frame{width:260px;height:320px;margin:0 auto}
+  .apropos-grid,.contact-wrap{grid-template-columns:1fr;gap:3rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:1.5rem 5%;gap:1.25rem;z-index:99;box-shadow:var(--shadow-md)}
+  .nav-links.open a{font-size:1rem;color:var(--dark)}
+}
+@media(max-width:640px){
+  section{padding:4rem 5%}
+  .form-row{grid-template-columns:1fr}
+  .exp-card{grid-template-columns:1fr}
+  .exp-meta{align-items:flex-start;flex-direction:row;flex-wrap:wrap}
+  .hero-stats{gap:1.75rem}
+  .nav-cta{display:none}
+  .hero-shape{display:none}
+    /* Transition mobile — bandes horizontales */
+  .page-transition{flex-direction:column}
+  .page-transition-bar{transform:scaleX(0);min-height:0}
+  .page-transition-bar::after{top:auto;right:auto;left:0;bottom:-2px;width:100%;height:4px}
+  .page-transition.leaving .page-transition-bar{transform:scaleX(1);transform-origin:left}
+  .page-transition.covered .page-transition-bar{transform:scaleX(1);transform-origin:right}
+  .page-transition.entering .page-transition-bar{transform:scaleX(0);transform-origin:right}
+}
+</style>
+</head>
+<body>
+
+<canvas id="trailCanvas"></canvas>
+
+<!-- TRANSITION DE PAGE -->
+<div class="page-transition" id="pageTransition">
+  <div class="page-transition-bar"></div>
+  <div class="page-transition-bar"></div>
+  <div class="page-transition-bar"></div>
+  <div class="page-transition-bar"></div>
+  <div class="page-transition-bar"></div>
+  <div class="page-transition-bar"></div>
+  <div class="page-transition-bar"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <img src="Images/icone_portfolio.png" alt="Logo Kévin Massat" loading="eager">
+    <span class="nav-logo-text">Kévin <span>Massat</span></span>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#experiences">Expériences</a></li>
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:18551f05-b2a7-45f2-8be4-f11be752ca26" class="nav-cta" target="_blank" rel="noopener noreferrer">Télécharger CV</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-accent-bar"></div>
+  <div class="hero-shape"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Disponible immédiatement · Toulouse
+      </div>
+      <h1 class="hero-title">
+        Kévin Massat,<br>chargé de <em>communication</em>
+      </h1>
+      <p class="hero-sub">
+        Proactif et dynamique, j'optimise la communication et la stratégie marketing de structures variées — en faisant preuve d'adaptabilité, d'autonomie et de réactivité.
+      </p>
+      <div class="hero-actions">
+        <a href="#experiences" class="btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>
+          Voir mes expériences
+        </a>
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:18551f05-b2a7-45f2-8be4-f11be752ca26" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Mon CV
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">années d'expériences</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6</div>
+          <div class="stat-label">postes occupés</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Master + MBA</div>
+          <div class="stat-label">Communication digitale</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <div class="hero-photo-bg"></div>
+        <img src="Images/photo_de_profil.jpg" alt="Photo de profil Kévin Massat" class="hero-photo" loading="eager">
+        <div class="hero-photo-badge">
+          ✓ Disponible immédiatement
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section id="experiences">
+  <div class="section-inner">
+    <p class="section-label fade-in">Parcours professionnel</p>
+    <h2 class="section-title fade-in">Mes expériences</h2>
+    <p class="section-intro fade-in">Un parcours varié, du sport associatif à l'événementiel et au monde bancaire.</p>
+    <div class="exp-grid">
+
+      <div class="exp-card fade-in" data-color="#272727">
+        <div class="exp-main">
+          <div class="exp-header">
+            <img src="Images/Logo_groupe_cta.png" alt="Groupe CTA" class="exp-logo" loading="lazy">
+            <div>
+              <div class="exp-role">Responsable marketing et communication</div>
+              <div class="exp-company">Groupe CTA (SOP Events, CTA Business Travel, CTA Meeting & Events, CTA Voyages) — Toulouse</div>
+            </div>
+          </div>
+          <ul class="exp-missions">
+            <li>Refonte des sites internet (parcours utilisateur, référencement SEO, identité visuelle)</li>
+            <li>Création des newsletters et qualification de la base de contacts</li>
+            <li>Élaboration de la stratégie de communication sur les réseaux sociaux</li>
+            <li>Préparation des supports physiques et digitaux</li>
+            <li>Communication et animation en interne + reporting des performances</li>
+          </ul>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-period">Sept. 2025 — en cours</div>
+          <span class="exp-type type-cdd">CDD</span>
+        </div>
+      </div>
+
+      <div class="exp-card fade-in" data-color="#308276">
+        <div class="exp-main">
+          <div class="exp-header">
+            <img src="Images/Logo_ca_sud_med.png" alt="Crédit Agricole" class="exp-logo" loading="lazy">
+            <img src="Images/Logo_le_village_by_ca_sud_med.png" alt="Le Village by CA" class="exp-logo" loading="lazy">
+            <div>
+              <div class="exp-role">Chargé de communication et marketing</div>
+              <div class="exp-company">Crédit Agricole Sud Méditerranée & Le Village by CA — Perpignan</div>
+            </div>
+          </div>
+          <ul class="exp-missions">
+            <li>Développement du plan d'action réseaux sociaux et site internet du Village by CA</li>
+            <li>Élaboration complète du site internet du Village by CA</li>
+            <li>Réalisation des supports visuels et rédaction des publications</li>
+            <li>Recherche de partenaires via plaquette commerciale et démarchage</li>
+            <li>Pilotage de la "Team Ambassadeurs jeunes" (vidéos promotionnelles, publications…)</li>
+          </ul>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-period">Sept. 2024 — Sept. 2025</div>
+          <span class="exp-type type-alt">Alternance</span>
+        </div>
+      </div>
+
+      <div class="exp-card fade-in" data-color="#020065">
+        <div class="exp-main">
+          <div class="exp-header">
+            <img src="Images/FFMOTO_LIGUE_OCCITANIE_V_BLEU_RVB.png" alt="Ligue Motocycliste Occitanie" class="exp-logo" loading="lazy">
+            <div>
+              <div class="exp-role">Chargé de communication</div>
+              <div class="exp-company">Ligue Motocycliste Occitanie — Balma</div>
+            </div>
+          </div>
+          <ul class="exp-missions">
+            <li>Développement du plan d'action réseaux sociaux et site internet de la LMOC</li>
+            <li>Réalisation des supports visuels, du contenu et rédaction des articles</li>
+            <li>Recherche de partenaires via plaquette commerciale et démarchage</li>
+            <li>Refonte du site internet avec élaboration d'un cahier des charges</li>
+            <li>Communication interne et reporting des performances des supports</li>
+          </ul>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-period">Sept. 2022 — Sept. 2023</div>
+          <span class="exp-type type-alt">Alternance</span>
+        </div>
+      </div>
+
+      <div class="exp-card fade-in" data-color="#BD9E54">
+        <div class="exp-main">
+          <div class="exp-header">
+            <img src="Images/Logo_ctb_hg.png" alt="Centre Technique Bretagne Henri Guérin" class="exp-logo" loading="lazy">
+            <div>
+              <div class="exp-role">Assistant chargé de développement</div>
+              <div class="exp-company">Centre Technique Bretagne Henri Guérin — Saint-Brieuc</div>
+            </div>
+          </div>
+          <ul class="exp-missions">
+            <li>Gestion des relations avec les clubs et partenaires (appels, courriels)</li>
+            <li>Création et programmation des supports de communication</li>
+            <li>Participation aux réunions de préparation d'événements</li>
+            <li>Gestion des achats</li>
+          </ul>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-period">Juin — Août 2022</div>
+          <span class="exp-type type-stage">Stage</span>
+        </div>
+      </div>
+
+      <div class="exp-card fade-in" data-color="gradient">
+        <div class="exp-main">
+          <div class="exp-header">
+            <img src="Images/Logo_asv_lavaur.png" alt="ASV Lavaur" class="exp-logo" loading="lazy">
+            <div>
+              <div class="exp-role">Chargé de communication</div>
+              <div class="exp-company">ASV Lavaur — Lavaur</div>
+            </div>
+          </div>
+          <ul class="exp-missions">
+            <li>Élaboration d'une stratégie d'attraction et de fidélisation des sponsors</li>
+            <li>Développement de la communication sur le site internet et les réseaux sociaux</li>
+          </ul>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-period">Sept. 2021 — Avril 2022</div>
+          <span class="exp-type type-stage">Stage</span>
+        </div>
+      </div>
+
+      <div class="exp-card fade-in" data-color="#973242">
+        <div class="exp-main">
+          <div class="exp-header">
+            <img src="Images/Logo_le_decode.png" alt="Le Décodé" class="exp-logo" loading="lazy">
+            <div>
+              <div class="exp-role">Rédacteur</div>
+              <div class="exp-company">Le Décodé — Toulouse</div>
+            </div>
+          </div>
+          <ul class="exp-missions">
+            <li>Rédaction mensuelle d'articles de fond sur la rubrique sport pour un journal universitaire</li>
+            <li>Recherche documentaire et couverture des enjeux sportifs et politiques</li>
+          </ul>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-period">Sept. 2021 — Sept. 2023</div>
+          <span class="exp-type type-benevolat">Bénévolat</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REALISATIONS -->
+<section id="realisations">
+  <div class="section-inner">
+    <p class="section-label fade-in">Portfolio</p>
+    <h2 class="section-title fade-in">Mes réalisations</h2>
+    <p class="section-intro fade-in">Des productions concrètes, de la conception de sites à la gestion de communauté, en passant par la rédaction journalistique.</p>
+    <div class="real-grid">
+      <div class="real-card fade-in">
+        <div class="real-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+        <div class="real-tag">Réseaux sociaux</div>
+        <div class="real-title">Community management — Crédit Agricole</div>
+        <div class="real-desc">Gestion des réseaux sociaux (Reels, publications, stories) pour la Caisse Régionale et Le Village by CA. Stratégie éditoriale et suivi des performances via Agorapulse.</div>
+        <a href="https://www.instagram.com/sud_mediterranee/" target="_blank" rel="noopener noreferrer" aria-label="Voir le compte Instagram du Crédit Agricole Sud Méditerranée" class="real-link">Voir le compte Instagram →</a>
+      </div>
+      <div class="real-card fade-in">
+        <div class="real-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div class="real-tag">Création de sites web</div>
+        <div class="real-title">Conception de sites de A à Z</div>
+        <div class="real-desc">De la réflexion stratégique (cahier des charges, UX, identité visuelle, SEO) à la mise en ligne — plusieurs sites complets conçus et déployés, dont le Village by CA et ce portfolio.</div>
+      </div>
+      <div class="real-card fade-in">
+        <div class="real-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <div class="real-tag">Vidéo & création graphique</div>
+        <div class="real-title">Production audiovisuelle et print</div>
+        <div class="real-desc">Réalisation et montage vidéo (Premiere Pro, After Effects), supports print et digitaux (Illustrator, Canva) pour des campagnes de communication multicanaux.</div>
+      </div>
+      <div class="real-card fade-in">
+        <div class="real-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="real-tag">Journalisme</div>
+        <div class="real-title">Articles de fond — Le Décodé</div>
+        <div class="real-desc">Rédaction d'articles analytiques sur les enjeux du sport : dopage, géopolitique, sécurité dans les stades, sport et Ukraine.</div>
+        <a href="https://kevinmassatmonportfolio.wordpress.com/wp-content/uploads/2024/07/lukraine-_-preuve-que-le-sport-peut-faire-lobjet-denjeux-politiques-1.pdf" target="_blank" rel="noopener noreferrer" class="real-link">Lire un article →</a>
+      </div>
+    </div>
+    <div class="fade-in">
+      <p class="articles-label">Articles publiés — Le Décodé</p>
+      <ul class="articles-list">
+        <li><a href="https://kevinmassatmonportfolio.wordpress.com/wp-content/uploads/2024/07/quand-le-sport-rime-avec-detection-mais-aussi-avec-falsification.pdf" rel="noopener noreferrer" target="_blank" aria-label="Lire l'article : Quand le sport rime avec détection mais aussi avec falsification">Quand le sport rime avec détection mais aussi avec falsification <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+        <li><a href="https://kevinmassatmonportfolio.wordpress.com/wp-content/uploads/2024/07/limportance-a-geometrie-variable-du-sport-dans-le-monde.pdf" rel="noopener noreferrer" target="_blank" aria-label="Lire l'article : L'importance à géométrie variable du sport dans le monde">L'importance à géométrie variable du sport dans le monde <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+        <li><a href="https://kevinmassatmonportfolio.wordpress.com/wp-content/uploads/2024/07/la-securite-dans-les-stades-2021-2022.pdf" rel="noopener noreferrer" target="_blank" aria-label="Lire l'article : La sécurité dans les stades">La sécurité dans les stades <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+        <li><a href="https://kevinmassatmonportfolio.wordpress.com/wp-content/uploads/2024/07/lukraine-_-preuve-que-le-sport-peut-faire-lobjet-denjeux-politiques-1.pdf" rel="noopener noreferrer" target="_blank" aria-label="Lire l'article : L'Ukraine, preuve que le sport peut faire l'objet d'enjeux politique">L'Ukraine, preuve que le sport peut faire l'objet d'enjeux politiques <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCES -->
+<section id="competences">
+  <div class="section-inner">
+    <p class="section-label fade-in">Outils & savoir-faire</p>
+    <h2 class="section-title fade-in">Mes compétences</h2>
+    <p class="section-intro fade-in">Des outils maîtrisés au quotidien, acquis sur le terrain lors de mes différentes missions.</p>
+    <div class="skills-grid">
+      <div class="skill-cat fade-in">
+        <div class="skill-cat-title">Création graphique & vidéo</div>
+        <div class="skill-pills">
+          <span class="skill-pill" data-brand="canva">Canva <span class="skill-years">5 ans</span></span>
+          <span class="skill-pill" data-brand="illustrator">Illustrator <span class="skill-years">5 ans</span></span>
+          <span class="skill-pill" data-brand="premiere">Premiere Pro <span class="skill-years">5 ans</span></span>
+          <span class="skill-pill" data-brand="aftereffects">After Effects <span class="skill-years">5 ans</span></span>
+          <span class="skill-pill" data-brand="gimp">Gimp <span class="skill-years">1 an</span></span>
+          <span class="skill-pill" data-brand="invideo">InVideo <span class="skill-years">1 an</span></span>
+        </div>
+      </div>
+      <div class="skill-cat fade-in">
+        <div class="skill-cat-title">Community management & web</div>
+        <div class="skill-pills">
+          <span class="skill-pill" data-brand="reseaux">Réseaux sociaux <span class="skill-years">5 ans</span></span> 
+<span class="skill-pill" data-brand="meta">Meta Business Suite <span class="skill-years">3 ans</span></span>
+<span class="skill-pill" data-brand="agorapulse">Agorapulse <span class="skill-years">1 an</span></span>
+<span class="skill-pill" data-brand="wordpress">WordPress <span class="skill-years">3 ans</span></span>
+<span class="skill-pill" data-brand="brevo">Brevo <span class="skill-years">1 an</span></span>
+        </div>
+      </div>
+      <div class="skill-cat fade-in">
+        <div class="skill-cat-title">IA & automatisation</div>
+        <div class="skill-pills">
+<span class="skill-pill" data-brand="openai">OpenAI / ChatGPT <span class="skill-years">3 ans</span></span>
+<span class="skill-pill" data-brand="claude">Claude <span class="skill-years">2 ans</span></span>
+<span class="skill-pill" data-brand="arena">Arena ai <span class="skill-years">2 ans</span></span>
+<span class="skill-pill" data-brand="n8n">n8n <span class="skill-years">1 an</span></span>
+<span class="skill-pill" data-brand="gamma">Gamma <span class="skill-years">1 an</span></span>
+<span class="skill-pill" data-brand="thot">Thot SEO <span class="skill-years">1 an</span></span>
+        </div>
+      </div>
+      <div class="skill-cat fade-in">
+        <div class="skill-cat-title">Bureautique & collaboration</div>
+        <div class="skill-pills">
+<span class="skill-pill" data-brand="word">Word <span class="skill-years">5 ans</span></span>
+<span class="skill-pill" data-brand="excel">Excel <span class="skill-years">5 ans</span></span>
+<span class="skill-pill" data-brand="powerpoint">PowerPoint <span class="skill-years">5 ans</span></span>
+<span class="skill-pill" data-brand="outlook">Outlook <span class="skill-years">5 ans</span></span>
+<span class="skill-pill" data-brand="teams">Teams <span class="skill-years">5 ans</span></span>
+<span class="skill-pill" data-brand="slack">Slack <span class="skill-years">1 an</span></span>
+<span class="skill-pill" data-brand="notion">Notion <span class="skill-years">1 an</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="apropos">
+  <div class="section-inner">
+    <p class="section-label fade-in">Qui suis-je ?</p>
+    <h2 class="section-title fade-in">À propos</h2>
+    <div class="apropos-grid">
+      <div class="apropos-text fade-in">
+        <p>Passionné de communication depuis mes premières années d'études, j'ai eu la chance de traverser des univers très différents — du <strong>sport associatif</strong> au <strong>monde bancaire</strong>, en passant par <strong>l'événementiel et le voyage</strong> avec le Groupe CTA. Chaque secteur m'a appris une chose essentielle : adapter le message à son audience est toujours plus efficace qu'un contenu générique.</p>
+        <p>Mes formations (<strong>Master Management du sport, option Communication digitale</strong> au TSM, puis <strong>MBA Communication et Marketing Digital</strong> à l'ISCOM Toulouse) m'ont donné une solide base théorique. C'est sur le terrain que j'ai développé mes réflexes : gérer l'imprévu, produire vite, collaborer efficacement.</p>
+        <p>Aujourd'hui disponible pour un CDI, je cherche une structure où la communication est prise au sérieux — et où je peux continuer à apprendre et à m'investir pleinement.</p>
+        <div style="margin-top:1.75rem">
+          <a href="#contact" class="btn-primary">Me contacter</a>
+        </div>
+      </div>
+      <div class="soft-skills fade-in">
+        <div class="soft-skill">
+          <div class="soft-skill-title">✍️ Rédaction & storytelling</div>
+          <div class="soft-skill-desc">2 ans au journal « Le Décodé » — écrire sur la durée, c'est apprendre à structurer une idée et tenir un lecteur en haleine.</div>
+        </div>
+        <div class="soft-skill">
+          <div class="soft-skill-title">🌐 Création web de A à Z</div>
+          <div class="soft-skill-desc">Cahier des charges, UX, identité visuelle, développement WordPress et SEO — j'ai conçu et livré plusieurs sites complets de la réflexion stratégique au lancement.</div>
+        </div>
+        <div class="soft-skill">
+          <div class="soft-skill-title">📊 Stratégie & pilotage</div>
+          <div class="soft-skill-desc">Définition des cibles, planification éditoriale, suivi de KPIs — j'aborde la communication comme un projet avec des objectifs mesurables.</div>
+        </div>
+        <div class="soft-skill">
+          <div class="soft-skill-title">🔄 Adaptabilité sectorielle</div>
+          <div class="soft-skill-desc">Sport, banque, événementiel, voyage : chaque secteur m'a demandé de changer de registre rapidement, sans perdre en cohérence de marque.</div>
+        </div>
+        <div class="soft-skill">
+          <div class="soft-skill-title">🤝 Travail en équipe</div>
+          <div class="soft-skill-desc">Chaque mission m'a placé au cœur d'équipes pluridisciplinaires — un contexte que j'apprécie et dans lequel je m'épanouis naturellement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label fade-in">Parlons-nous</p>
+    <h2 class="section-title fade-in">Me contacter</h2>
+    <div class="contact-wrap">
+      <div class="contact-info fade-in">
+        <p>Disponible immédiatement pour un CDI en communication ou marketing. Je réponds sous 24h à tout message.</p>
+        <div class="contact-links">
+          <a href="mailto:kevin.massat82@gmail.com" rel="noopener noreferrer" class="contact-link link-gmail">
+            <div class="contact-link-icon icon-gmail">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <img src="Images/logo_gmail.png" alt="Gmail">
+            </div>
+            kevin.massat82@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/kevin-massat/" target="_blank" rel="noopener noreferrer" class="contact-link link-linkedin">
+            <div class="contact-link-icon icon-linkedin">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <img src="Images/logo_linkedin.png" alt="LinkedIn">
+            </div>
+            LinkedIn — Kévin Massat
+          </a>
+          <a href="tel:0629090692" class="contact-link link-tel">
+            <div class="contact-link-icon icon-tel">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.1 6.1l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            06.29.09.06.92
+          </a>
+          <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:18551f05-b2a7-45f2-8be4-f11be752ca26" target="_blank" rel="noopener noreferrer" class="contact-link link-cv">
+            <div class="contact-link-icon icon-cv">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            Télécharger mon CV
+          </a>
+        </div>
+      </div>
+      <form class="contact-form fade-in" action="https://formspree.io/f/xqejrkqr" method="POST" id="contactForm">
+        <input type="hidden" name="_replyto" value="kevin.massat82@gmail.com">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom <span class="req">*</span></label>
+            <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom <span class="req">*</span></label>
+            <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-mail <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jean@entreprise.fr" required>
+          </div>
+          <div class="form-group">
+            <label for="entreprise">Entreprise <span class="req">*</span></label>
+            <input type="text" id="entreprise" name="entreprise" placeholder="Votre société" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="poste">Poste</label>
+          <input type="text" id="poste" name="poste" placeholder="Directeur RH, Responsable communication…">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Bonjour Kévin, je souhaite vous contacter au sujet de…"></textarea>
+        </div>
+        <div class="rgpd-block">
+          <input type="checkbox" id="rgpd" name="rgpd" required>
+          <label for="rgpd">J'accepte que mes données personnelles (nom, prénom, e-mail, entreprise) soient utilisées par Kévin Massat dans le seul but de répondre à ma prise de contact. Elles ne seront ni conservées au-delà du nécessaire, ni transmises à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression en écrivant à kevin.massat82@gmail.com. <span class="req">*</span></label>
+        </div>
+        <button type="submit" class="form-submit" id="submitBtn">Envoyer le message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">© 2026 Kévin Massat — Tous droits réservés</p>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/kevin-massat/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Kévin Massat">LinkedIn</a>
+<a href="mailto:kevin.massat82@gmail.com" aria-label="Envoyer un email à Kévin Massat">Gmail</a>
+<a href="tel:0629090692" aria-label="Appeler Kévin Massat">06.29.09.06.92</a>
+<a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:18551f05-b2a7-45f2-8be4-f11be752ca26" target="_blank" rel="noopener noreferrer" aria-label="Télécharger le CV de Kévin Massat">CV</a>
+  </div>
+</footer>
+
+<script>
+// NAV MOBILE
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// FADE IN
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 70);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// FORMULAIRE
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  const rgpd = document.getElementById('rgpd');
+  if (!rgpd.checked) {
+    e.preventDefault();
+    alert('Veuillez accepter la politique de confidentialité pour envoyer votre message.');
+    return;
+  }
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Envoi en cours…';
+  btn.disabled = true;
+});
+
+// EXP CARDS — NAVIGATION
+const expLinks = [
+  'groupe_cta.html',
+  'ca_sud_med.html',
+  'lmoc.html',
+  'ctb_hg.html',
+  'asv_lavaur.html',
+  'le_decode.html',
+];
+document.querySelectorAll('.exp-card').forEach((card, i) => {
+  card.addEventListener('click', () => {
+    window.location.href = expLinks[i];
+  });
+});
+
+// SKILL PILLS — HOVER COULEUR MARQUE
+document.querySelectorAll('.skill-pill[data-brand]').forEach(function(pill){
+  var colors = {
+    canva:'#00C4CC', illustrator:'#FF9A00', premiere:'#9999FF', aftereffects:'#9999FF',
+    gimp:'#5C5543', invideo:'#4B0082', reseaux:'#E1306C', meta:'#0668E1',
+    agorapulse:'#FF6B35', wordpress:'#21759B', seo:'#4285F4', brevo:'#0B996E',
+    openai:'#10A37F', claude:'#D97757', arena:'#C8A87C', n8n:'#EA4B71',
+    gamma:'#8B5CF6', thot:'#D4A0C7', word:'#2B579A', excel:'#217346',
+    powerpoint:'#D24726', outlook:'#0078D4', teams:'#6264A7', slack:'#4A154B',
+    notion:'#AAAAAA'
+  };
+  var brand = pill.getAttribute('data-brand');
+  var color = colors[brand] || '#FFCD00';
+  var lightBrands = ['arena','thot'];
+  var isLight = lightBrands.indexOf(brand) !== -1;
+
+  pill.addEventListener('mouseenter', function(){
+    pill.style.borderColor = color;
+    pill.style.color = '#FFFFFF';
+    pill.style.background = color + '22';
+    var years = pill.querySelector('.skill-years');
+    if(years) years.style.color = color;
+  });
+
+  pill.addEventListener('mouseleave', function(){
+    pill.style.borderColor = '';
+    pill.style.color = '';
+    pill.style.background = '';
+    var years = pill.querySelector('.skill-years');
+    if(years) years.style.color = '';
+  });
+});
+
+// EXP CARDS — HOVER COULEUR
+document.querySelectorAll('.exp-card[data-color]').forEach(function(card){
+  var color = card.getAttribute('data-color');
+  var isGradient = color === 'gradient';
+  var hoverColor = isGradient ? '#E62934' : color;
+  var r = parseInt(hoverColor.slice(1,3), 16);
+  var g = parseInt(hoverColor.slice(3,5), 16);
+  var b = parseInt(hoverColor.slice(5,7), 16);
+
+  card.addEventListener('mouseenter', function(){
+    clearTimeout(card._barTimeout);
+
+    if(isGradient){
+      card.style.setProperty('--exp-bar-color', '#0000FE');
+    } else {
+      card.style.setProperty('--exp-bar-color', color);
+    }
+
+    card.style.borderColor = hoverColor;
+    card.style.boxShadow = '0 6px 20px rgba(' + r + ',' + g + ',' + b + ',.25)';
+
+    var typeEl = card.querySelector('.exp-type');
+    if(typeEl){
+      typeEl.style.background = isGradient ? '#0000FE' : hoverColor;
+      typeEl.style.color = '#FFFFFF';
+      typeEl.style.borderColor = 'transparent';
+    }
+  });
+
+  card.addEventListener('mouseleave', function(){
+    card.style.borderColor = '';
+    card.style.boxShadow = '';
+
+    var typeEl = card.querySelector('.exp-type');
+    if(typeEl){
+      typeEl.style.background = '';
+      typeEl.style.color = '';
+      typeEl.style.borderColor = '';
+    }
+
+    // on attend la fin de l'animation du trait avant de remettre la couleur par défaut
+    card._barTimeout = setTimeout(function(){
+      card.style.setProperty('--exp-bar-color', '');
+    }, 0);
+  });
+});
+
+// TRANSITION DE PAGE
+(function(){
+  var transition = document.getElementById('pageTransition');
+  if(!transition) return;
+
+  transition.classList.add('covered');
+
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      transition.classList.remove('covered');
+      transition.classList.add('entering');
+      setTimeout(function(){
+        transition.style.display = 'none';
+        transition.classList.remove('entering');
+      }, 1200);
+    }, 100);
+  });
+
+  document.addEventListener('click', function(e){
+    var link = e.target.closest('a');
+    if(!link) return;
+    var href = link.getAttribute('href');
+    if(!href) return;
+    if(link.getAttribute('target') === '_blank') return;
+    if(href.startsWith('mailto:')) return;
+    if(href.startsWith('tel:')) return;
+    if(href.startsWith('#')) return;
+    if(href.startsWith('http') && !href.includes(window.location.hostname)) return;
+    if(href.startsWith('javascript')) return;
+
+    e.preventDefault();
+    transition.style.display = 'flex';
+    transition.classList.remove('entering');
+    transition.classList.remove('covered');
+    transition.classList.remove('leaving');
+    void transition.offsetWidth;
+    transition.classList.add('leaving');
+    setTimeout(function(){ window.location.href = href; }, 900);
+  });
+})();
+
+// CURSOR TRAIL CANVAS
+(function(){
+  if(window.innerWidth <= 960) return;
+  var canvas = document.getElementById('trailCanvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var points = [];
+  var maxPoints = 50;
+  var isMoving = false;
+  var moveTimeout;
+
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  document.addEventListener('mousemove', function(e){
+    isMoving = true;
+    clearTimeout(moveTimeout);
+    moveTimeout = setTimeout(function(){ isMoving = false; }, 100);
+    points.push({ x: e.clientX, y: e.clientY, life: 1 });
+    if(points.length > maxPoints) points.shift();
+  });
+
+  function draw(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var i = points.length;
+    while(i--){ points[i].life -= 0.018; if(points[i].life <= 0) points.splice(i, 1); }
+    if(points.length > 1){
+      for(var j = 1; j < points.length; j++){
+        var p1 = points[j-1], p2 = points[j], life = p2.life;
+        ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y);
+        ctx.strokeStyle = 'rgba(255, 205, 0, ' + (life * 0.25) + ')';
+        ctx.lineWidth = life * 3; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.stroke();
+      }
+    }
+    if(points.length > 0 && isMoving){
+      var last = points[points.length - 1];
+      ctx.beginPath(); ctx.arc(last.x, last.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 205, 0, 0.4)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(last.x, last.y, 6, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 205, 0, 0.08)'; ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
