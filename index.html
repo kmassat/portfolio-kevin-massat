@@ -243,6 +243,7 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
   background:linear-gradient(135deg, #4181ED, #C0211F, #E44134, #F4B605, #32A350) border-box;
   -webkit-mask:linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite:xor;
+  mask:linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask-composite:exclude;
   opacity:0;
   transition:opacity .3s ease;
@@ -852,7 +853,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   btn.disabled = true;
 });
 
-// EXP CARDS — NAVIGATION
+// EXP CARDS — NAVIGATION AVEC TRANSITION
 const expLinks = [
   'groupe_cta.html',
   'ca_sud_med.html',
@@ -863,7 +864,20 @@ const expLinks = [
 ];
 document.querySelectorAll('.exp-card').forEach((card, i) => {
   card.addEventListener('click', () => {
-    window.location.href = expLinks[i];
+    var transition = document.getElementById('pageTransition');
+    if(!transition){
+      window.location.href = expLinks[i];
+      return;
+    }
+    transition.style.display = 'flex';
+    transition.classList.remove('entering');
+    transition.classList.remove('covered');
+    transition.classList.remove('leaving');
+    void transition.offsetWidth;
+    transition.classList.add('leaving');
+    setTimeout(function(){
+      window.location.href = expLinks[i];
+    }, 900);
   });
 });
 
