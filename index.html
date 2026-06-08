@@ -93,24 +93,78 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 /* EXPERIENCES */
 #experiences{background:var(--light)}
 .exp-grid{display:grid;gap:1.25rem}
-.exp-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:2rem;display:grid;grid-template-columns:1fr auto;gap:1.5rem;box-shadow:var(--shadow);transition:box-shadow .25s,transform .25s,border-color .25s;position:relative;overflow:hidden}
-.exp-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.exp-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--exp-bar-color, var(--yellow));transform:scaleY(0);transform-origin:bottom;transition:transform .3s}
+.exp-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  padding:2rem;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:1.5rem;
+  box-shadow:var(--shadow);
+  transition:box-shadow .25s,transform .25s,border-color .25s,background .25s;
+  position:relative;
+  overflow:hidden;
+}
+.exp-card:hover{
+  transform:translateY(-2px);
+  background:var(--exp-bg-hover, var(--white));
+  border-color:var(--exp-border-hover, var(--yellow));
+  box-shadow:0 6px 20px var(--exp-shadow-hover, rgba(39,39,39,.12));
+  --exp-bar-color:var(--exp-line-hover, var(--yellow));
+}
+.exp-card::after{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:var(--exp-bar-color, var(--yellow));
+  transform:scaleY(0);
+  transform-origin:bottom;
+  transition:transform .3s;
+}
 .exp-card:hover::after{transform:scaleY(1)}
-.exp-logo{width:42px;height:42px;object-fit:contain;border-radius:8px;border:1px solid var(--border);padding:4px;background:var(--white);flex-shrink:0}
+
+.exp-logo{
+  width:42px;height:42px;object-fit:contain;border-radius:8px;
+  border:1px solid var(--border);padding:4px;background:var(--white);flex-shrink:0
+}
 .exp-header{display:flex;align-items:flex-start;gap:.875rem;margin-bottom:.75rem;flex-wrap:wrap}
 .exp-role{font-family:'Bricolage Grotesque',sans-serif;font-size:1.08rem;font-weight:700;color:var(--dark);margin-bottom:.2rem}
 .exp-company{color:var(--dark2);font-size:.85rem;font-weight:600}
 .exp-missions{list-style:none;display:flex;flex-direction:column;gap:.35rem;margin-top:.75rem}
 .exp-missions li{font-size:.86rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.55}
-.exp-missions li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--exp-bar-color, var(--yellow));border:1.5px solid var(--exp-bar-color, var(--yellow-dark));transition:background .3s ease,border-color .3s ease}
+.exp-missions li::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:.55em;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--exp-bar-color, var(--yellow));
+  border:1.5px solid var(--exp-bar-color, var(--yellow-dark));
+  transition:background .3s ease,border-color .3s ease
+}
 .exp-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;flex-shrink:0;min-width:120px}
 .exp-period{font-size:.78rem;color:var(--muted);text-align:right;line-height:1.4}
 .exp-type{font-size:.72rem;font-weight:700;padding:.3rem .75rem;border-radius:6px;white-space:nowrap;text-align:center}
-.type-cdd{background:#FEF3C7;color:#92400E}
-.type-alt{background:var(--yellow-soft);color:var(--dark);border:1px solid var(--yellow)}
-.type-stage{background:#F0FDF4;color:#166534}
-.type-benevolat{background:#F5F3FF;color:#5B21B6}
+
+.exp-card:hover .exp-role,
+.exp-card:hover .exp-company,
+.exp-card:hover .exp-period{
+  color:#FFFFFF;
+}
+.exp-card:hover .exp-missions li{
+  color:rgba(255,255,255,.85);
+}
+.exp-card:hover .exp-type{
+  background:var(--exp-type-hover, var(--yellow));
+  color:#FFFFFF;
+  border-color:transparent;
+}
 
 /* REALISATIONS */
 #realisations{background:var(--white)}
@@ -464,6 +518,8 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
             <div>
               <div class="exp-role">Responsable marketing et communication</div>
               <div class="exp-company">Groupe CTA (SOP Events, CTA Business Travel, CTA Meeting & Events, CTA Voyages) — Toulouse</div>
+              <div class="exp-card fade-in"
+                   style="--exp-bg-hover:#272727; --exp-line-hover:#272727; --exp-border-hover:#272727; --exp-shadow-hover:rgba(39,39,39,.25); --exp-type-hover:#272727;">
             </div>
           </div>
           <ul class="exp-missions">
@@ -488,6 +544,8 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
             <div>
               <div class="exp-role">Chargé de communication et marketing</div>
               <div class="exp-company">Crédit Agricole Sud Méditerranée & Le Village by CA — Perpignan</div>
+              <div class="exp-card fade-in"
+                   style="--exp-bg-hover:#308276; --exp-line-hover:#308276; --exp-border-hover:#308276; --exp-shadow-hover:rgba(48,130,118,.25); --exp-type-hover:#308276;">
             </div>
           </div>
           <ul class="exp-missions">
@@ -511,6 +569,8 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
             <div>
               <div class="exp-role">Chargé de communication</div>
               <div class="exp-company">Ligue Motocycliste Occitanie — Balma</div>
+              <div class="exp-card fade-in"
+                   style="--exp-bg-hover:#020065; --exp-line-hover:#020065; --exp-border-hover:#020065; --exp-shadow-hover:rgba(2,0,101,.25); --exp-type-hover:#020065;">
             </div>
           </div>
           <ul class="exp-missions">
@@ -534,6 +594,8 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
             <div>
               <div class="exp-role">Assistant chargé de développement</div>
               <div class="exp-company">Centre Technique Bretagne Henri Guérin — Saint-Brieuc</div>
+              <div class="exp-card fade-in"
+                   style="--exp-bg-hover:#BD9E54; --exp-line-hover:#BD9E54; --exp-border-hover:#BD9E54; --exp-shadow-hover:rgba(189,158,84,.25); --exp-type-hover:#BD9E54;">
             </div>
           </div>
           <ul class="exp-missions">
@@ -556,6 +618,8 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
             <div>
               <div class="exp-role">Chargé de communication</div>
               <div class="exp-company">ASV Lavaur — Lavaur</div>
+              <div class="exp-card fade-in"
+                   style="--exp-bg-hover:linear-gradient(135deg,#0000FE,#FE0000); --exp-line-hover:#0000FE; --exp-border-hover:#E62934; --exp-shadow-hover:rgba(230,41,52,.25); --exp-type-hover:#0000FE;">
             </div>
           </div>
           <ul class="exp-missions">
@@ -576,6 +640,8 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
             <div>
               <div class="exp-role">Rédacteur</div>
               <div class="exp-company">Le Décodé — Toulouse</div>
+              <div class="exp-card fade-in"
+                   style="--exp-bg-hover:#973242; --exp-line-hover:#973242; --exp-border-hover:#973242; --exp-shadow-hover:rgba(151,50,66,.25); --exp-type-hover:#973242;">
             </div>
           </div>
           <ul class="exp-missions">
