@@ -856,6 +856,22 @@ function revealPhone(e){
   var transition = document.getElementById('pageTransition');
   if(!transition) return;
 
+  // Gérer le retour arrière du navigateur (bfcache)
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted){
+      // La page vient du cache (bouton retour)
+      transition.classList.remove('leaving');
+      transition.classList.remove('covered');
+      transition.classList.add('entering');
+      transition.style.display = 'flex';
+      setTimeout(function(){
+        transition.style.display = 'none';
+        transition.classList.remove('entering');
+      }, 1200);
+    }
+  });
+
+  // Arrivée normale sur la page
   transition.classList.add('covered');
 
   window.addEventListener('load', function(){
@@ -869,6 +885,7 @@ function revealPhone(e){
     }, 100);
   });
 
+  // Sortie — intercepter les clics sur les liens internes
   document.addEventListener('click', function(e){
     var link = e.target.closest('a');
     if(!link) return;

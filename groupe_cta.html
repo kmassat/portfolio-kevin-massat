@@ -822,23 +822,82 @@ function revealPhone(e){
   var transition = document.getElementById('pageTransition');
   if(!transition) return;
 
-  // Arrivée sur la page — les barres couvrent l'écran puis se rétractent vers le haut
-  // On commence avec l'écran couvert
+  // Gérer le retour arrière du navigateur (bfcache)
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted){
+      // La page vient du cache (bouton retour)
+      transition.classList.remove('leaving');
+      transition.classList.remove('covered');
+      transition.classList.add('entering');
+      transition.style.display = 'flex';
+      setTimeout(function(){
+        transition.style.display = 'none';
+        transition.classList.remove('entering');
+      }, 1200);
+    }
+  });
+
+  // Arrivée normale sur la page
   transition.classList.add('covered');
 
   window.addEventListener('load', function(){
-    // Petit délai pour que le CSS "covered" soit bien appliqué
     setTimeout(function(){
       transition.classList.remove('covered');
       transition.classList.add('entering');
-
-      // Cacher complètement après l'animation
       setTimeout(function(){
         transition.style.display = 'none';
         transition.classList.remove('entering');
       }, 1200);
     }, 100);
   });
+
+  // Sortie — intercepter les clics sur les liens internes
+  document.addEventListener('click', function(e){
+    var link = e.target.closest('a');
+    if(!link) return;
+    var href = link.getAttribute('href');
+    if(!href) return;
+    if(link.getAttribute('target') === '_blank') return;
+    if(href.startsWith('mailto:')) return;
+    if(href.startsWith('tel:')) return;
+    if(href.startsWith('#')) return;
+    if(href.startsWith('http') && !href.includes(window.location.hostname)) return;
+    if(href.startsWith('javascript')) return;
+
+    e.preventDefault();
+    transition.style.display = 'flex';
+    transition.classList.remove('entering');
+    transition.classList.remove('covered');
+    transition.classList.remove('leaving');
+    void transition.offsetWidth;
+    transition.classList.add('leaving');
+    setTimeout(function(){ window.location.href = href; }, 900);
+  });
+})();
+
+  // Sortie — intercepter les clics sur les liens internes
+  document.addEventListener('click', function(e){
+    var link = e.target.closest('a');
+    if(!link) return;
+    var href = link.getAttribute('href');
+    if(!href) return;
+    if(link.getAttribute('target') === '_blank') return;
+    if(href.startsWith('mailto:')) return;
+    if(href.startsWith('tel:')) return;
+    if(href.startsWith('#')) return;
+    if(href.startsWith('http') && !href.includes(window.location.hostname)) return;
+    if(href.startsWith('javascript')) return;
+
+    e.preventDefault();
+    transition.style.display = 'flex';
+    transition.classList.remove('entering');
+    transition.classList.remove('covered');
+    transition.classList.remove('leaving');
+    void transition.offsetWidth;
+    transition.classList.add('leaving');
+    setTimeout(function(){ window.location.href = href; }, 900);
+  });
+})();
 
   // Sortie — intercepter les clics sur les liens internes
   document.addEventListener('click', function(e){
