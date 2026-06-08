@@ -217,8 +217,14 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 /* LIENS / RESSOURCES */
 .resources-grid{display:flex;gap:1rem;flex-wrap:wrap}
 .resource-link{display:inline-flex;align-items:center;gap:.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:.875rem 1.25rem;text-decoration:none;color:var(--dark);font-size:.88rem;font-weight:600;transition:border-color .2s,box-shadow .2s,transform .2s;box-shadow:var(--shadow)}
-.resource-link:hover{border-color:#308276;box-shadow:0 6px 20px rgba(48,130,118,.3);transform:translateY(-2px)}
-.resource-link:hover svg{stroke:#308276}
+
+/* Ressource Crédit Agricole */
+.resource-link.resource-ca:hover{border-color:#308276;box-shadow:0 6px 20px rgba(48,130,118,.3);transform:translateY(-2px)}
+.resource-link.resource-ca:hover svg{stroke:#308276}
+
+/* Ressource Village by CA */
+.resource-link.resource-village:hover{border-color:#F4CC66;box-shadow:0 6px 20px rgba(244,204,102,.3);transform:translateY(-2px)}
+.resource-link.resource-village:hover svg{stroke:#F4CC66}
 .resource-link svg{width:18px;height:18px;stroke:var(--yellow-dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
 /* NAV EXPERIENCES */
@@ -631,11 +637,11 @@ canvas#trailCanvas{
     <p class="section-label fade-in">Liens utiles</p>
     <h2 class="section-title fade-in">Ressources</h2>
     <div class="resources-grid fade-in">
-      <a href="https://www.credit-agricole.fr/ca-sudmed/" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Site du Crédit Agricole Sud Méditerranée">
+      <a href="https://www.credit-agricole.fr/ca-sudmed/" target="_blank" rel="noopener noreferrer" class="resource-link resource-ca" aria-label="Site du Crédit Agricole Sud Méditerranée">
         <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         Site du Crédit Agricole Sud Méditerranée
       </a>
-      <a href="https://sudmed.levillagebyca.com/" target="_blank" rel="noopener noreferrer" class="resource-link" aria-label="Site du Village by CA Sud Méditerranée">
+      <a href="https://sudmed.levillagebyca.com/" target="_blank" rel="noopener noreferrer" class="resource-link resource-village" aria-label="Site du Village by CA Sud Méditerranée">
         <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         Site du Village by CA Sud Méditerranée
       </a>
