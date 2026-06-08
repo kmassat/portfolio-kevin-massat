@@ -1,0 +1,21 @@
+source: .
+
+paths:
+  uploads: Images
+
+collections_config:
+  pages:
+    name: Pages
+    path: .
+    glob:
+      - '*.html'
+    icon: notes
+    disable_add: true
+    disable_delete: true
+    disable_url: true
+
+_inputs:
+  image:
+    type: image
+  color:
+    type: color
