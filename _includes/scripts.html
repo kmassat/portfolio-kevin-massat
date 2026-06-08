@@ -16,6 +16,34 @@ var observer = new IntersectionObserver(function(entries){
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el); });
 
+// EXP CARDS — NAVIGATION AVEC TRANSITION
+var expLinks = [
+  '{{ site.baseurl }}/groupe_cta.html',
+  '{{ site.baseurl }}/ca_sud_med.html',
+  '{{ site.baseurl }}/lmoc.html',
+  '{{ site.baseurl }}/ctb_hg.html',
+  '{{ site.baseurl }}/asv_lavaur.html',
+  '{{ site.baseurl }}/le_decode.html',
+];
+document.querySelectorAll('.exp-card').forEach(function(card, i){
+  card.addEventListener('click', function(){
+    var transition = document.getElementById('pageTransition');
+    if(!transition){
+      window.location.href = expLinks[i];
+      return;
+    }
+    transition.style.display = 'flex';
+    transition.classList.remove('entering');
+    transition.classList.remove('covered');
+    transition.classList.remove('leaving');
+    void transition.offsetWidth;
+    transition.classList.add('leaving');
+    setTimeout(function(){
+      window.location.href = expLinks[i];
+    }, 900);
+  });
+});
+
 // TRANSITION DE PAGE
 (function(){
   var transition = document.getElementById('pageTransition');
