@@ -1,0 +1,21 @@
+hero:
+  badge: "Disponible très prochainement · Toulouse"
+  title: "Kévin Massat,<br>chargé de <em>communication</em>"
+  subtitle: "Proactif et dynamique, j'optimise la communication et la stratégie marketing de structures variées — en faisant preuve d'adaptabilité, d'autonomie et de réactivité."
+  photo: "Images/photo_de_profil.jpg"
+  badge_disponible: "✓ Disponible très prochainement"
+
+stats:
+  - value: "5+"
+    label: "années d'expériences"
+  - value: "6"
+    label: "postes occupés"
+  - value: "Master + MBA"
+    label: "Communication digitale"
+
+contact:
+  intro: "Disponible très prochainement pour un CDI en communication ou marketing. Je réponds sous 24h à tout message."
+  email: "kevin.massat82@gmail.com"
+  phone: "06.29.09.06.92"
+  linkedin: "https://www.linkedin.com/in/kevin-massat/"
+  cv_url: "https://acrobat.adobe.com/id/urn:aaid:sc:EU:18551f05-b2a7-45f2-8be4-f11be752ca26"
