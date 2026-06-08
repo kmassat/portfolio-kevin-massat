@@ -1,0 +1,111 @@
+<script>
+// NAV MOBILE
+var hamburger = document.getElementById('hamburger');
+var navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+document.querySelectorAll('.nav-links a').forEach(function(a){ a.addEventListener('click', function(){ navLinks.classList.remove('open'); }); });
+
+// FADE IN
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry, i){
+    if(entry.isIntersecting){
+      setTimeout(function(){ entry.target.classList.add('visible'); }, i * 70);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el); });
+
+// TRANSITION DE PAGE
+(function(){
+  var transition = document.getElementById('pageTransition');
+  if(!transition) return;
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted){
+      transition.classList.remove('leaving');
+      transition.classList.remove('covered');
+      transition.classList.add('entering');
+      transition.style.display = 'flex';
+      setTimeout(function(){
+        transition.style.display = 'none';
+        transition.classList.remove('entering');
+      }, 1200);
+    }
+  });
+  transition.classList.add('covered');
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      transition.classList.remove('covered');
+      transition.classList.add('entering');
+      setTimeout(function(){
+        transition.style.display = 'none';
+        transition.classList.remove('entering');
+      }, 1200);
+    }, 100);
+  });
+  document.addEventListener('click', function(e){
+    var link = e.target.closest('a');
+    if(!link) return;
+    var href = link.getAttribute('href');
+    if(!href) return;
+    if(link.getAttribute('target') === '_blank') return;
+    if(href.startsWith('mailto:')) return;
+    if(href.startsWith('tel:')) return;
+    if(href.startsWith('#')) return;
+    if(href.startsWith('http') && !href.includes(window.location.hostname)) return;
+    if(href.startsWith('javascript')) return;
+    e.preventDefault();
+    transition.style.display = 'flex';
+    transition.classList.remove('entering');
+    transition.classList.remove('covered');
+    transition.classList.remove('leaving');
+    void transition.offsetWidth;
+    transition.classList.add('leaving');
+    setTimeout(function(){ window.location.href = href; }, 900);
+  });
+})();
+
+// CURSOR TRAIL CANVAS
+(function(){
+  if(window.innerWidth <= 960) return;
+  var canvas = document.getElementById('trailCanvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var points = [];
+  var maxPoints = 50;
+  var isMoving = false;
+  var moveTimeout;
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+  document.addEventListener('mousemove', function(e){
+    isMoving = true;
+    clearTimeout(moveTimeout);
+    moveTimeout = setTimeout(function(){ isMoving = false; }, 100);
+    points.push({ x: e.clientX, y: e.clientY, life: 1 });
+    if(points.length > maxPoints) points.shift();
+  });
+  function draw(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var i = points.length;
+    while(i--){ points[i].life -= 0.018; if(points[i].life <= 0) points.splice(i, 1); }
+    if(points.length > 1){
+      for(var j = 1; j < points.length; j++){
+        var p1 = points[j-1], p2 = points[j], life = p2.life;
+        ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y);
+        ctx.strokeStyle = 'rgba(255, 205, 0, ' + (life * 0.25) + ')';
+        ctx.lineWidth = life * 3; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.stroke();
+      }
+    }
+    if(points.length > 0 && isMoving){
+      var last = points[points.length - 1];
+      ctx.beginPath(); ctx.arc(last.x, last.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 205, 0, 0.4)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(last.x, last.y, 6, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 205, 0, 0.08)'; ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
