@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TON-USERNAME-GITHUB/portfolio-kevin-massat
+  repo: kmassat/portfolio-kevin-massat
   branch: main
 
 media_folder: "Images"
