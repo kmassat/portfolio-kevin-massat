@@ -947,17 +947,15 @@ document.querySelectorAll('.exp-card[data-color]').forEach(function(card){
     card.style.borderColor = '';
     card.style.boxShadow = '';
 
-    var typeEl = card.querySelector('.exp-type');
-    if(typeEl){
-      typeEl.style.background = '';
-      typeEl.style.color = '';
-      typeEl.style.borderColor = '';
-    }
-
-    // on attend la fin de l'animation du trait avant de remettre la couleur par défaut
     card._barTimeout = setTimeout(function(){
       card.style.setProperty('--exp-bar-color', '');
-    }, 100);
+      var typeEl = card.querySelector('.exp-type');
+      if(typeEl){
+        typeEl.style.background = '';
+        typeEl.style.color = '';
+        typeEl.style.borderColor = '';
+      }
+    }, 300);
   });
 });
 
