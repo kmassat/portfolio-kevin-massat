@@ -103,7 +103,7 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .exp-company{color:var(--dark2);font-size:.85rem;font-weight:600}
 .exp-missions{list-style:none;display:flex;flex-direction:column;gap:.35rem;margin-top:.75rem}
 .exp-missions li{font-size:.86rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.55}
-.exp-missions li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--exp-bar-color, var(--yellow));border:1.5px solid var(--exp-bar-color, var(--yellow-dark));transition:background .3s ease,border-color .3s ease}
+.exp-missions li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--exp-bar-color, var(--yellow));border:1.5px solid var(--exp-bar-color, var(--yellow-dark));}
 .exp-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;flex-shrink:0;min-width:120px}
 .exp-period{font-size:.78rem;color:var(--muted);text-align:right;line-height:1.4}
 .exp-type{font-size:.72rem;font-weight:700;padding:.3rem .75rem;border-radius:6px;white-space:nowrap;text-align:center}
@@ -957,7 +957,7 @@ document.querySelectorAll('.exp-card[data-color]').forEach(function(card){
     // on attend la fin de l'animation du trait avant de remettre la couleur par défaut
     card._barTimeout = setTimeout(function(){
       card.style.setProperty('--exp-bar-color', '');
-    }, 0);
+    }, 100);
   });
 });
 
