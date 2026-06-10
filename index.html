@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -49,14 +48,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .nav-cta:hover{background:var(--yellow-dark);transform:translateY(-1px);box-shadow:var(--shadow-yellow)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:.3s}
-.nav-overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.4);
-  z-index:98;
-}
-.nav-overlay.active{display:block}
 
 /* FOCUS VISIBLE — ACCESSIBILITE */
 a:focus-visible,button:focus-visible{
@@ -354,31 +345,12 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
 }
 @media(max-width:640px){
   section{padding:4rem 5%}
-  .apropos-grid{gap:2rem}
-  .contact-wrap{gap:2rem}
   .form-row{grid-template-columns:1fr}
-  .form-group label{font-size:.82rem}
-  .form-group input,.form-group textarea{font-size:.9rem;padding:.8rem 1rem}
-  .form-submit{font-size:.95rem;padding:.9rem}
-  .rgpd-block label{font-size:.8rem}
   .exp-card{grid-template-columns:1fr}
   .exp-meta{align-items:flex-start;flex-direction:row;flex-wrap:wrap}
   .hero-stats{gap:1.75rem}
-  .nav-cta{
-  font-size:.75rem;
-  padding:.4rem .9rem;
-}
+  .nav-cta{display:none}
   .hero-shape{display:none}
-  .hero-photo-frame{width:200px;height:250px}
-  .hero-badge{font-size:.72rem;padding:.3rem .75rem}
-  .hero-sub{font-size:.9rem}
-  .hero-photo-badge{
-  font-size:.72rem;
-  padding:.5rem .8rem;
-  bottom:-12px;
-  left:-8px;
-}
-.stat-num{font-size:1.4rem}
     /* Transition mobile — bandes horizontales */
   .page-transition{flex-direction:column}
   .page-transition-bar{transform:scaleX(0);min-height:0}
@@ -386,15 +358,6 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   .page-transition.leaving .page-transition-bar{transform:scaleX(1);transform-origin:left}
   .page-transition.covered .page-transition-bar{transform:scaleX(1);transform-origin:right}
   .page-transition.entering .page-transition-bar{transform:scaleX(0);transform-origin:right}
-}
-.soft-skill.touched::before{opacity:0}
-.soft-skill.touched::after{transform:translateX(0)}
-.soft-skill.touched .soft-skill-title{color:var(--white)}
-.soft-skill.touched .soft-skill-desc{color:rgba(255,255,255,.7)}
-.skill-pill{
-  padding:.5rem 1rem;
-  font-size:.82rem;
-  min-height:44px;
 }
 </style>
 </head>
@@ -431,8 +394,6 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
     <span></span><span></span><span></span>
   </button>
 </nav>
-
-<div class="nav-overlay" id="navOverlay"></div>
 
 <!-- HERO -->
 <section id="hero">
@@ -867,27 +828,6 @@ const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-const navOverlay = document.getElementById('navOverlay');
-
-hamburger.addEventListener('click', function(){
-  navLinks.classList.toggle('open');
-  navOverlay.classList.toggle('active');
-});
-
-navOverlay.addEventListener('click', function(){
-  navLinks.classList.remove('open');
-  navOverlay.classList.remove('active');
-});
-
-document.querySelectorAll('.nav-links a').forEach(function(a){
-  a.addEventListener('click', function(){
-    navLinks.classList.remove('open');
-    navOverlay.classList.remove('active');
-  });
-});
 
 // FADE IN
 const observer = new IntersectionObserver((entries) => {
