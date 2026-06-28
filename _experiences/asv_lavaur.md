@@ -18,8 +18,8 @@ entites_label: ''
 entites_title: ''
 entites_intro: ''
 missions_label: Mon rôle
-missions_title: Mes principales missions
-missions_intro: A
+missions_title: Mes principales missionsSS
+missions_intro: eee
 missions:
   - num: '01'
     title: Stratégie sponsors
