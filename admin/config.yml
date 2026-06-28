@@ -1,18 +1,44 @@
 backend:
   name: github
   repo: kmassat/portfolio-kevin-massat
-  branch: main # (Si votre branche principale s'appelle master, changez main en master)
+  branch: main
 
-media_folder: "images" 
+media_folder: "images"
 public_folder: "/images"
 
 collections:
+  # 1. RUBRIQUE POUR AJOUTER VOS PROJETS
+  - name: "projets"
+    label: "💼 Mes Projets"
+    folder: "_projets" # Dossier où seront enregistrés les projets
+    create: true # Autorise à cliquer sur "Nouveau projet"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre du projet", name: "title", widget: "string" }
+      - { label: "Catégorie (ex: Web, Design...)", name: "category", widget: "string", required: false }
+      - { label: "Image de couverture", name: "image", widget: "image", required: false }
+      - { label: "Lien externe (vers le site/projet)", name: "link", widget: "string", required: false }
+      - { label: "Description du projet", name: "body", widget: "markdown" }
+
+  # 2. RUBRIQUE POUR MODIFIER LA PAGE D'ACCUEIL (Fichier unique)
+  - name: "accueil"
+    label: "🏠 Page d'accueil & Profil"
+    files:
+      - label: "Textes de présentation"
+        name: "presentation"
+        file: "_data/accueil.yml" # Fichier qui stockera vos textes
+        fields:
+          - { label: "Titre principal (Votre Nom)", name: "titre", widget: "string" }
+          - { label: "Sous-titre / Votre métier", name: "metier", widget: "string" }
+          - { label: "Paragraphe 'À propos de moi'", name: "bio", widget: "text" }
+          - { label: "Adresse e-mail de contact", name: "email", widget: "string" }
+
+  # 3. RUBRIQUE POUR CREER DES PAGES DIVERSES (ex: Mentions légales, CV...)
   - name: "pages"
-    label: "Pages"
+    label: "📄 Pages supplémentaires"
     folder: "pages"
-    create: true 
-    slug: "{{slug}}" 
+    create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Titre de la page", name: "title", widget: "string" }
-      - { label: "Image principale", name: "image", widget: "image", required: false }
-      - { label: "Contenu / Texte", name: "body", widget: "markdown" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
