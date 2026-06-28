@@ -5,4 +5,4 @@ collections:
     output: false
   experiences:
     output: true
-    permalink: /:slug.html
+    permalink: /:path.html
