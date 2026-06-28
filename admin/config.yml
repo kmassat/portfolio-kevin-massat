@@ -23,7 +23,7 @@ collections:
           - { label: "Paragraphe À propos 2", name: "apropos_2", widget: "text" }
           - { label: "Paragraphe À propos 3", name: "apropos_3", widget: "text" }
 
-  # 2. EXPERIENCES (Pages complètes avec Audit SEO)
+   # 2. EXPERIENCES (Pages complètes avec Audit SEO)
   - name: "experiences"
     label: "⭐ Mes Expériences"
     folder: "_experiences"
@@ -33,7 +33,7 @@ collections:
       - { label: "Balise Titre SEO (max 60 caractères)", name: "meta_title", widget: "string", pattern: ['^.{1,60}$', "Le titre SEO est trop long ! Saisissez moins de 60 caractères."] }
       - { label: "Méta Description (max 160 caractères)", name: "meta_description", widget: "text", pattern: ['^[\s\S]{1,160}$', "La description dépasse 160 caractères !"] }
       
-      - { label: "Nom court (ex: LMOC)", name: "company_short", widget: "string" }
+      - { label: "Nom court", name: "company_short", widget: "string" }
       - { label: "Logo Principal", name: "logo", widget: "image" }
       - { label: "Second Logo (Optionnel)", name: "logo2", widget: "image", required: false }
       - { label: "Bannière de fond (Hero)", name: "hero_bg", widget: "image" }
@@ -46,14 +46,15 @@ collections:
 
       - { label: "Sur-titre Présentation", name: "pres_label", widget: "string" }
       - { label: "Titre Présentation", name: "pres_title", widget: "string" }
-      - { label: "Texte de présentation (HTML autorisé pour <p> et <strong>)", name: "pres_text", widget: "text" }
+      - { label: "Texte de présentation", name: "pres_text", widget: "text" }
       - { label: "Image de présentation", name: "pres_img", widget: "string" }
       - { label: "Cadrage CSS optionnel (ex: center 60%)", name: "pres_img_pos", widget: "string", required: false }
 
-      - { label: "Sur-titre Entités (CA/CTA)", name: "entites_label", widget: "string", required: false }
-      - { label: "Titre Entités", name: "entites_title", widget: "string", required: false }
+      - { label: "Identifiant HTML section (ex: evenements ou entites)", name: "entites_id", widget: "string", default: "entites", required: false }
+      - { label: "Sur-titre Entités/Evenements", name: "entites_label", widget: "string", required: false }
+      - { label: "Titre Entités/Evenements", name: "entites_title", widget: "string", required: false }
       - { label: "Intro Entités", name: "entites_intro", widget: "text", required: false }
-      - label: "Liste des agences / entités"
+      - label: "Liste des agences / événements"
         name: "entites"
         widget: "list"
         required: false
@@ -62,10 +63,11 @@ collections:
           - { label: "Description", name: "desc", widget: "text" }
           - { label: "Logo (Image)", name: "logo", widget: "image", required: false }
           - { label: "OU Icône SVG pure", name: "svg_icon", widget: "string", required: false }
-          - { label: "Code marque CSS", name: "brand_code", widget: "string", required: false }
-          - { label: "Logo horizontal large ?", name: "is_wide", widget: "boolean", default: false }
+          - { label: "Code marque CSS (ex: academy, tournoi)", name: "brand_code", widget: "string", required: false }
+          - { label: "Logo horizontal moyen (icon-wide) ?", name: "is_wide", widget: "boolean", default: false }
+          - { label: "Logo horizontal grand (icon-wide-lg) ?", name: "is_wide_lg", widget: "boolean", default: false }
 
-      - { label: "Sur-titre Disciplines (LMOC)", name: "disciplines_label", widget: "string", required: false }
+      - { label: "Sur-titre Disciplines", name: "disciplines_label", widget: "string", required: false }
       - { label: "Titre Disciplines", name: "disciplines_title", widget: "string", required: false }
       - { label: "Intro Disciplines", name: "disciplines_intro", widget: "text", required: false }
       - label: "Liste des disciplines"
@@ -73,16 +75,16 @@ collections:
         widget: "list"
         required: false
         fields:
-          - { label: "Titre (ex: Motocross)", name: "title", widget: "string" }
-          - { label: "Sous-titre (ex: Terrain · Spectacle)", name: "sub", widget: "string" }
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "sub", widget: "string" }
           - { label: "Image", name: "img", widget: "image" }
-          - { label: "Code CSS recadrage (ex: endurance-tt, trial, rallye)", name: "code", widget: "string", required: false }
+          - { label: "Code CSS recadrage", name: "code", widget: "string", required: false }
 
       - { label: "Sur-titre Missions", name: "missions_label", widget: "string" }
       - { label: "Titre Missions", name: "missions_title", widget: "string" }
       - { label: "Intro Missions (Optionnel)", name: "missions_intro", widget: "text", required: false }
       
-      - label: "LISTE DE MISSIONS SIMPLES (CA/CTA)"
+      - label: "LISTE DE MISSIONS SIMPLES"
         name: "missions"
         widget: "list"
         required: false
@@ -92,12 +94,12 @@ collections:
           - { label: "Description", name: "desc", widget: "text" }
           - { label: "Code SVG survol", name: "svg_icon", widget: "string", required: false }
 
-      - label: "OU GROUPES DE MISSIONS AVEC TITRES (LMOC)"
+      - label: "OU GROUPES DE MISSIONS AVEC TITRES"
         name: "mission_groups"
         widget: "list"
         required: false
         fields:
-          - { label: "Titre du groupe (ex: Communication externe)", name: "title", widget: "string" }
+          - { label: "Titre du groupe", name: "title", widget: "string" }
           - label: "Missions du groupe"
             name: "missions"
             widget: "list"
@@ -115,7 +117,7 @@ collections:
           - { label: "Nom du bouton", name: "label", widget: "string" }
           - { label: "URL du site", name: "url", widget: "string" }
           - { label: "Classe CSS spécifique", name: "custom_class", widget: "string", required: false }
-          - { label: "Couleur CSS (ex: #CB1F48)", name: "color", widget: "string", required: false }
+          - { label: "Couleur CSS (ex: #BD9E54)", name: "color", widget: "string", required: false }
 
       - { label: "URL de la page PRECEDENTE", name: "prev_url", widget: "string", required: false }
       - { label: "Titre de la page PRECEDENTE", name: "prev_title", widget: "string", required: false }
@@ -123,4 +125,4 @@ collections:
 
       - { label: "URL de la page SUIVANTE", name: "next_url", widget: "string", required: false }
       - { label: "Titre de la page SUIVANTE", name: "next_title", widget: "string", required: false }
-      - { label: "Couleur survol SUIVANTE", name: "next_color", widget: "string", required: false }
+      - { label: "Couleur survol SUIVANTE (ex: gradient)", name: "next_color", widget: "string", required: false }
