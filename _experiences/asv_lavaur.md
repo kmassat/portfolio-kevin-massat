@@ -3,6 +3,7 @@ meta_title: ASV Lavaur — Kévin Massat
 meta_description: Découvrez mon expérience en tant que Chargé de communication à l'ASV Lavaur, dans le cadre d'un stage de septembre 2021 à avril 2022.
 company_short: ASV Lavaur
 logo: Images/Logo_asv_lavaur.png
+logo_class: page-hero-logo-asv
 hero_bg: Images/banniere_asv_lavaur.jpg
 role: Chargé de communication
 company: ASV Lavaur — Lavaur
@@ -14,12 +15,17 @@ pres_label: Le club
 pres_title: ASV Lavaur
 pres_text: <p>L'<strong>Amicale Sportive Vauréenne</strong> (ASV Lavaur) est un club français de <strong>rugby à XV</strong> fondé en 1906 et basé à Lavaur dans le département du Tarn.</p><p>Il évolue actuellement en <strong>Fédérale 1</strong>, soit au cinquième échelon du rugby français. L'ASV évolue au <strong>stade Joseph-Dalla-Riva</strong>, baptisé en 2023 du nom de l'ancien rugbymen passé par le club.</p><p>Dans le cadre d'un <strong>projet tutoré</strong>, j'ai travaillé en lien avec le club afin d'établir une stratégie de communication et de développement des partenariats.</p>
 pres_img: Images/illustration_asv_lavaur.jpeg
+pres_img_pos: ''
+entites_id: ''
 entites_label: ''
 entites_title: ''
 entites_intro: ''
+disciplines_label: ''
+disciplines_title: ''
+disciplines_intro: ''
 missions_label: Mon rôle
-missions_title: Mes principales missionsSS
-missions_intro: eee
+missions_title: Mes principales missions
+missions_intro: ''
 missions:
   - num: '01'
     title: Stratégie sponsors
@@ -40,7 +46,6 @@ prev_color: '#BD9E54'
 next_url: le_decode.html
 next_title: Le Décodé
 next_color: '#973242'
-logo_class: page-hero-logo-asv
 layout: experience
 permalink: /asv_lavaur.html
 ---
