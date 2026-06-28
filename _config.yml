@@ -1,5 +1,8 @@
 title: Kévin Massat — Chargé de Communication
-# Configuration pour autoriser les collections du CMS
+
 collections:
   realisations:
-    output: false # false car ce sont des cartes sur la page d'accueil, pas des pages isolées
+    output: false
+  experiences:
+    output: true
+    permalink: /:slug.html # Magique : génère la page à la racine exacte de votre site !
