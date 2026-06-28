@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
-/* ... VOS STYLES EXISTANTS SONT CONSERVES ... */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --yellow:#FFCD00;--yellow-dark:#E6B800;--yellow-soft:#FFF8D6;--yellow-mid:#FFF3B0;
@@ -37,7 +36,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:.3s}
 a:focus-visible,button:focus-visible,.cta-btn:focus-visible,.exp-nav-link:focus-visible{outline:2px solid var(--yellow);outline-offset:3px;border-radius:4px;}
 
-/* BANNIERE DE HERO DYNAMIQUE */
 .page-hero{padding:7rem 5% 3rem;border-bottom:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden;background:#1a1a1a;}
 .page-hero::before{content:'';position:absolute;inset:0;background:url('{{ page.hero_bg }}') center/cover no-repeat;opacity:.45;z-index:0;pointer-events:none;}
 .page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(39,39,39,.55) 0%, rgba(39,39,39,.35) 50%, rgba(39,39,39,.25) 100%);z-index:1;pointer-events:none;}
@@ -67,16 +65,14 @@ section{padding:5rem 5%}
 h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:800;letter-spacing:-.025em;color:var(--dark);margin-bottom:.75rem}
 .section-intro{color:var(--muted);font-size:.95rem;line-height:1.75;margin-bottom:2.5rem;max-width:640px;font-weight:300}
 
-/* PRESENTATION */
 .pres-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center}
 .pres-text p{color:var(--muted);line-height:1.8;margin-bottom:1.25rem;font-size:.95rem;font-weight:300}
 .pres-text p strong{color:var(--dark);font-weight:600}
 .pres-img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow-md);object-fit:cover;aspect-ratio:4/3}
 
-/* ENTITES / ACTIVITES */
 .entites-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem}
 .entite-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:all .35s ease;border-top:4px solid var(--yellow);position:relative;overflow:hidden}
-.entite-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.entite-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);border-color:var(--yellow)}
 .entite-icon{width:42px;height:42px;background:var(--yellow-soft);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;position:relative;overflow:hidden;transition:background .35s ease}
 .entite-icon svg{width:20px;height:20px;stroke:var(--dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:opacity .3s ease;position:relative;z-index:1}
 .entite-icon img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6px;opacity:0;transition:opacity .3s ease;z-index:2}
@@ -100,7 +96,6 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .entite-card[data-brand="voyages"]:hover .entite-title,.entite-card[data-brand="voyages"]:hover .entite-desc{color:var(--white)}
 .entite-card[data-brand="voyages"]:hover .entite-icon{background:rgba(255,255,255,.99)}
 
-/* MISSIONS */
 #missions{background:var(--white)}
 .missions-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
 .mission-item{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s,border-color .2s}
@@ -114,7 +109,14 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .mission-item:hover .mission-icon-hover{opacity:1}
 .mission-num span{transition:opacity .3s ease;display:inline-block}
 
-/* NAV EXPERIENCES */
+.resources-grid{display:flex;gap:1rem;flex-wrap:wrap}
+.resource-link{display:inline-flex;align-items:center;gap:.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:.875rem 1.25rem;text-decoration:none;color:var(--dark);font-size:.88rem;font-weight:600;transition:border-color .2s,box-shadow .2s,transform .2s;box-shadow:var(--shadow)}
+.resource-link.resource-ca:hover{border-color:#308276;box-shadow:0 6px 20px rgba(48,130,118,.3);transform:translateY(-2px)}
+.resource-link.resource-ca:hover svg{stroke:#308276}
+.resource-link.resource-village:hover{border-color:#F4CC66;box-shadow:0 6px 20px rgba(244,204,102,.3);transform:translateY(-2px)}
+.resource-link.resource-village:hover svg{stroke:#F4CC66}
+.resource-link svg{width:18px;height:18px;stroke:var(--yellow-dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
 .exp-nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:3rem 0;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
 .exp-nav-link{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--muted);font-size:.88rem;font-weight:600;padding:.75rem 1.25rem;border:1.5px solid var(--border);border-radius:var(--radius-sm);transition:border-color .2s,color .2s,box-shadow .2s,background .2s}
 .exp-nav-link:hover{border-color:var(--yellow);color:var(--dark);box-shadow:var(--shadow);background:var(--yellow-soft)}
@@ -123,12 +125,6 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .exp-nav-label{font-size:.7rem;color:var(--muted-light);text-transform:uppercase;letter-spacing:.1em}
 .exp-nav-title{font-family:'Bricolage Grotesque',sans-serif;font-size:.85rem;font-weight:700;color:var(--dark)}
 
-/* RESSOURCES */
-.resources-grid{display:flex;gap:1rem;flex-wrap:wrap}
-.resource-link{display:inline-flex;align-items:center;gap:.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:.875rem 1.25rem;text-decoration:none;color:var(--dark);font-size:.88rem;font-weight:600;transition:border-color .3s,box-shadow .3s,transform .3s;box-shadow:var(--shadow)}
-.resource-link svg{width:18px;height:18px;stroke:var(--yellow-dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-
-/* BLOC CTA CONTACT */
 .cta-contact{background:var(--dark);padding:5rem 5%;position:relative;overflow:hidden}
 .cta-contact::before{content:'';position:absolute;right:-5%;top:-30%;width:300px;height:300px;background:var(--yellow);border-radius:50%;opacity:.07;pointer-events:none}
 .cta-contact::after{content:'';position:absolute;left:-3%;bottom:-20%;width:200px;height:200px;background:var(--yellow);border-radius:50%;opacity:.05;pointer-events:none}
@@ -157,7 +153,6 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .cta-detail:hover{color:var(--yellow)}
 .cta-detail svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
-/* FOOTER */
 footer{padding:2rem 5%;border-top:4px solid var(--yellow);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;background:var(--dark)}
 .footer-copy{font-size:.8rem;color:#9A9A9A}
 .footer-links{display:flex;gap:1.5rem}
@@ -213,7 +208,6 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   .page-hero-logo{width:52px;height:52px;padding:6px}
   .page-back{margin-bottom:1.25rem;font-size:.75rem}
   .pres-img{aspect-ratio:16/9}
-  .entite-icon.icon-wide{width:60px;height:36px}
   .cta-btn{width:100%;justify-content:center;font-size:.82rem;padding:.7rem 1.25rem}
   .cta-contact{padding:3.5rem 5%}
   .cta-contact-inner h2{font-size:1.3rem}
@@ -249,7 +243,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
 <!-- NAV -->
 <nav>
   <a href="index.html#hero" class="nav-logo">
-    <img src="Images/icone_portfolio.png" alt="Logo Kévin Massat">
+    <img src="Images/icone_portfolio.png" alt="Logo Kévin Massat" loading="eager">
     <span class="nav-logo-text">Kévin <span>Massat</span></span>
   </a>
   <ul class="nav-links" id="nav-links">
@@ -265,7 +259,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   </button>
 </nav>
 
-<!-- PAGE HERO DYNAMIQUE -->
+<!-- PAGE HERO DYNAMIQUE (Gestion de 1 ou 2 logos) -->
 <header class="page-hero">
   <div class="page-hero-inner">
     <a href="index.html#experiences" class="page-back">
@@ -274,6 +268,9 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
     </a>
     <div class="page-hero-content">
       <img src="{{ page.logo }}" alt="{{ page.company_short }}" class="page-hero-logo" loading="eager">
+      {% if page.logo2 %}
+      <img src="{{ page.logo2 }}" alt="{{ page.company_short }}" class="page-hero-logo" loading="eager">
+      {% endif %}
       <div class="page-hero-text">
         <h1>{{ page.role }}</h1>
         <div class="page-hero-company">{{ page.company }}</div>
@@ -307,7 +304,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   </div>
 </section>
 
-<!-- ENTITES DYNAMIQUES (Affiché seulement si renseigné dans le CMS) -->
+<!-- ENTITES DYNAMIQUES (Gère les SVG et les Images) -->
 {% if page.entites %}
 <section id="entites" style="background:var(--light)">
   <div class="section-inner">
@@ -316,10 +313,14 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
     <p class="section-intro fade-in">{{ page.entites_intro }}</p>
     <div class="entites-grid">
       {% for entite in page.entites %}
-      <div class="entite-card fade-in" data-brand="{{ entite.brand_code }}">
+      <div class="entite-card fade-in" {% if entite.brand_code %}data-brand="{{ entite.brand_code }}"{% endif %}>
         <div class="entite-icon {% if entite.is_wide %}icon-wide{% endif %}">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <img src="{{ entite.logo }}" alt="{{ entite.title }}" loading="lazy">
+          {% if entite.svg_icon %}
+            <svg viewBox="0 0 24 24">{{ entite.svg_icon }}</svg>
+          {% else %}
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <img src="{{ entite.logo }}" alt="{{ entite.title }}" loading="lazy">
+          {% endif %}
         </div>
         <div class="entite-title">{{ entite.title }}</div>
         <div class="entite-desc">{{ entite.desc }}</div>
@@ -330,7 +331,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
 </section>
 {% endif %}
 
-<!-- MISSIONS DYNAMIQUES -->
+<!-- MISSIONS DYNAMIQUES (Gère le SVG personnalisé par mission) -->
 <section id="missions">
   <div class="section-inner">
     <p class="section-label fade-in">{{ page.missions_label }}</p>
@@ -342,7 +343,9 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
         <div class="mission-num">
           <span>{{ mission.num }}</span>
           <div class="mission-icon-hover">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <svg viewBox="0 0 24 24">
+              {% if mission.svg_icon %}{{ mission.svg_icon }}{% else %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>{% endif %}
+            </svg>
           </div>
         </div>
         <div class="mission-content">
@@ -363,7 +366,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
     <h2 class="section-title fade-in">Ressources</h2>
     <div class="resources-grid fade-in">
       {% for res in page.ressources %}
-      <a href="{{ res.url }}" target="_blank" rel="noopener noreferrer" class="resource-link" data-color="{{ res.color }}" aria-label="Site de {{ res.label }}">
+      <a href="{{ res.url }}" target="_blank" rel="noopener noreferrer" class="resource-link {{ res.custom_class }}" {% if res.color %}data-color="{{ res.color }}"{% endif %} aria-label="{{ res.label }}">
         <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         {{ res.label }}
       </a>
@@ -373,11 +376,22 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
 </section>
 {% endif %}
 
-<!-- NAVIGATION EXPERIENCES DYNAMIQUE -->
-{% if page.next_url %}
+<!-- NAVIGATION EXPERIENCES DYNAMIQUE (Gère Précédent et Suivant) -->
 <section style="padding:2rem 5%">
   <div class="exp-nav">
+    {% if page.prev_url %}
+    <a href="{{ page.prev_url }}" class="exp-nav-link" data-hover-color="{{ page.prev_color }}">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      <div class="exp-nav-link-info">
+        <span class="exp-nav-label">Expérience précédente</span>
+        <span class="exp-nav-title">{{ page.prev_title }}</span>
+      </div>
+    </a>
+    {% else %}
     <div></div>
+    {% endif %}
+
+    {% if page.next_url %}
     <a href="{{ page.next_url }}" class="exp-nav-link" data-hover-color="{{ page.next_color }}">
      <div class="exp-nav-link-info">
       <span class="exp-nav-label">Expérience suivante</span>
@@ -385,12 +399,13 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
     </div>
     <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
    </a>
+   {% else %}
+   <div></div>
+   {% endif %}
  </div>
 </section>
-{% endif %}
 
 <!-- CTA CONTACT & FOOTER (Fixes) -->
-<!-- ... VOS BLOCS SONT CONSERVES A L'IDENTIQUE ... -->
 <section class="cta-contact">
   <div class="cta-contact-inner">
     <p class="section-label fade-in">Intéressé par mon profil ?</p>
@@ -428,7 +443,6 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   </div>
 </footer>
 
-<!-- VOS SCRIPTS INTACTS -->
 <script>
 var hamburger=document.getElementById('hamburger'),navLinks=document.getElementById('nav-links');
 hamburger.addEventListener('click',function(){navLinks.classList.toggle('open');});
