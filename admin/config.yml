@@ -3,6 +3,8 @@ backend:
   repo: kmassat/portfolio-kevin-massat
   branch: main
 
+site_url: "https://kmassat.github.io/portfolio-kevin-massat" # Débloque le bouton de prévisualisation !
+
 media_folder: "Images" 
 public_folder: "Images"
 
