@@ -109,7 +109,19 @@ collections:
               - { label: "Titre de la mission", name: "title", widget: "string" }
               - { label: "Description", name: "desc", widget: "text" }
               - { label: "Code SVG survol", name: "svg_icon", widget: "string", required: false }
-
+              
+      - { label: "Fond CSS Missions (ex: light ou white)", name: "missions_bg", widget: "string", default: "white", required: false }
+      - { label: "Sur-titre Articles", name: "articles_label", widget: "string", required: false }
+      - { label: "Titre Articles", name: "articles_title", widget: "string", required: false }
+      - { label: "Intro Articles", name: "articles_intro", widget: "text", required: false }
+      - label: "Liste des articles PDF"
+        name: "articles"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Titre de l'article", name: "title", widget: "string" }
+          - { label: "URL du PDF", name: "url", widget: "string" }
+          
       - label: "Liste des ressources / liens"
         name: "ressources"
         widget: "list"
