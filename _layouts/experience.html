@@ -349,7 +349,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   <div class="section-inner">
     <p class="section-label fade-in">{{ page.entites_label }}</p>
     <h2 class="section-title fade-in">{{ page.entites_title }}</h2>
-    {% if page.entites_intro %><p class="section-intro fade-in">{{ page.entites_intro }}</p>{% endif %}
+    {% if page.entites_intro %}><p class="section-intro fade-in">{{ page.entites_intro }}</p>{% endif %}
     <div class="entites-grid">
       {% for entite in page.entites %}
       <div class="entite-card fade-in" {% if entite.brand_code %}data-brand="{{ entite.brand_code }}"{% endif %}>
@@ -376,7 +376,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   <div class="section-inner">
     <p class="section-label fade-in">{{ page.disciplines_label }}</p>
     <h2 class="section-title fade-in">{{ page.disciplines_title }}</h2>
-    {% if page.disciplines_intro %><p class="section-intro fade-in">{{ page.disciplines_intro }}</p>{% endif %}
+    {% if page.disciplines_intro %}<p class="section-intro fade-in">{{ page.disciplines_intro }}</p>{% endif %}
     <div class="disciplines-grid">
       {% for disc in page.disciplines %}
       <div class="discipline-card fade-in" {% if disc.code %}data-discipline="{{ disc.code }}"{% endif %}>
@@ -394,7 +394,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   <div class="section-inner">
     <p class="section-label fade-in">{{ page.missions_label }}</p>
     <h2 class="section-title fade-in">{{ page.missions_title }}</h2>
-    {% if page.missions_intro %><p class="section-intro fade-in">{{ page.missions_intro }}</p>{% endif %}
+    {% if page.missions_intro %}<p class="section-intro fade-in">{{ page.missions_intro }}</p>{% endif %}
     
     {% if page.mission_groups %}
       {% for group in page.mission_groups %}
