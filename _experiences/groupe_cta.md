@@ -1,5 +1,6 @@
 ---
 layout: experience
+permalink: /groupe_cta.html
 meta_title: "Groupe CTA — Kévin Massat"
 meta_description: "Découvrez mon expérience en tant que Responsable marketing et communication au sein du Groupe CTA (SOP Events, CTA Business Travel, CTA Meeting & Events, CTA Voyages) à Toulouse."
 company_short: "Groupe CTA"
