@@ -70,6 +70,7 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .pres-text p strong{color:var(--dark);font-weight:600}
 .pres-img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow-md);object-fit:cover;aspect-ratio:4/3}
 
+/* STYLES ENTITES (CA & CTA) */
 .entites-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem}
 .entite-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:all .35s ease;border-top:4px solid var(--yellow);position:relative;overflow:hidden}
 .entite-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);border-color:var(--yellow)}
@@ -96,6 +97,20 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .entite-card[data-brand="voyages"]:hover .entite-title,.entite-card[data-brand="voyages"]:hover .entite-desc{color:var(--white)}
 .entite-card[data-brand="voyages"]:hover .entite-icon{background:rgba(255,255,255,.99)}
 
+/* STYLES DISCIPLINES (LMOC) */
+.disciplines-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.discipline-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:180px;cursor:default;}
+.discipline-card img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;transition:transform .5s ease;}
+.discipline-card:hover img{transform:scale(1.08);}
+.discipline-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.55) 100%);transition:background .4s ease;z-index:1;}
+.discipline-card:hover::after{background:linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.35) 100%);}
+.discipline-card-title{position:absolute;bottom:1rem;left:1.25rem;z-index:2;font-family:'Bricolage Grotesque',sans-serif;font-size:.95rem;font-weight:700;color:var(--white);letter-spacing:-.01em;}
+.discipline-card-title span{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:400;color:rgba(255,255,255,.7);margin-top:.15rem;}
+.discipline-card[data-discipline="trial"] img{object-position:center 20%;}
+.discipline-card[data-discipline="rallye"] img{object-position:center 40%;}
+.discipline-card[data-discipline="endurance-tt"] img{object-position:center 35%;}
+
+/* STYLES MISSIONS */
 #missions{background:var(--white)}
 .missions-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
 .mission-item{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s,border-color .2s}
@@ -103,6 +118,7 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .mission-num{font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:800;color:var(--yellow);flex-shrink:0;width:32px;text-align:center;position:relative}
 .mission-content h3{font-family:'Bricolage Grotesque',sans-serif;font-size:.9rem;font-weight:700;color:var(--dark);margin-bottom:.35rem}
 .mission-content p{font-size:.84rem;color:var(--muted);line-height:1.6}
+.mission-group-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1rem;font-weight:700;color:var(--dark);margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--yellow);display:inline-block}
 .mission-icon-hover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease}
 .mission-icon-hover svg{width:22px;height:22px;stroke:var(--yellow);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .mission-item:hover .mission-num span{opacity:0}
@@ -111,6 +127,7 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 
 .resources-grid{display:flex;gap:1rem;flex-wrap:wrap}
 .resource-link{display:inline-flex;align-items:center;gap:.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:.875rem 1.25rem;text-decoration:none;color:var(--dark);font-size:.88rem;font-weight:600;transition:border-color .2s,box-shadow .2s,transform .2s;box-shadow:var(--shadow)}
+.resource-link:hover{border-color:#020065;box-shadow:0 6px 20px rgba(2,0,101,.3);transform:translateY(-2px)}
 .resource-link.resource-ca:hover{border-color:#308276;box-shadow:0 6px 20px rgba(48,130,118,.3);transform:translateY(-2px)}
 .resource-link.resource-ca:hover svg{stroke:#308276}
 .resource-link.resource-village:hover{border-color:#F4CC66;box-shadow:0 6px 20px rgba(244,204,102,.3);transform:translateY(-2px)}
@@ -182,6 +199,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
 .page-transition-bar:nth-child(7){background:var(--light);transition:transform .6s cubic-bezier(.77,0,.18,1) .48s;}
 
 @media(max-width:960px){
+  .disciplines-grid{grid-template-columns:repeat(2,1fr)}
   .pres-grid{grid-template-columns:1fr;gap:2.5rem}
   .nav-links{display:none}
   .hamburger{display:flex}
@@ -208,6 +226,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   .page-hero-logo{width:52px;height:52px;padding:6px}
   .page-back{margin-bottom:1.25rem;font-size:.75rem}
   .pres-img{aspect-ratio:16/9}
+  .entite-icon.icon-wide{width:60px;height:36px}
   .cta-btn{width:100%;justify-content:center;font-size:.82rem;padding:.7rem 1.25rem}
   .cta-contact{padding:3.5rem 5%}
   .cta-contact-inner h2{font-size:1.3rem}
@@ -223,6 +242,8 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   .mission-num{font-size:1.1rem;width:28px}
   .mission-content h3{font-size:.85rem}
   .mission-content p{font-size:.8rem}
+  .disciplines-grid{grid-template-columns:1fr}
+  .discipline-card{min-height:150px}
   .page-transition{flex-direction:column;}
   .page-transition-bar{transform:scaleX(0);min-height:0;}
   .page-transition-bar::after{top:auto;right:auto;left:0;bottom:-2px;width:100%;height:4px;}
@@ -259,7 +280,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   </button>
 </nav>
 
-<!-- PAGE HERO DYNAMIQUE (Gestion de 1 ou 2 logos) -->
+<!-- PAGE HERO -->
 <header class="page-hero">
   <div class="page-hero-inner">
     <a href="index.html#experiences" class="page-back">
@@ -290,7 +311,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   </div>
 </header>
 
-<!-- PRESENTATION DYNAMIQUE -->
+<!-- PRESENTATION DYNAMIQUE (Gestion du cadrage photo personnalisé) -->
 <section id="presentation">
   <div class="section-inner">
     <p class="section-label fade-in">{{ page.pres_label }}</p>
@@ -299,12 +320,12 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
       <div class="pres-text fade-in">
         {{ page.pres_text }}
       </div>
-      <img src="{{ page.pres_img }}" alt="{{ page.pres_title }}" class="pres-img fade-in" loading="lazy">
+      <img src="{{ page.pres_img }}" alt="{{ page.pres_title }}" class="pres-img fade-in" {% if page.pres_img_pos %}style="object-position: {{ page.pres_img_pos }}"{% endif %} loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- ENTITES DYNAMIQUES (Gère les SVG et les Images) -->
+<!-- ENTITES DYNAMIQUES (CA & CTA) -->
 {% if page.entites %}
 <section id="entites" style="background:var(--light)">
   <div class="section-inner">
@@ -331,30 +352,74 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
 </section>
 {% endif %}
 
-<!-- MISSIONS DYNAMIQUES (Gère le SVG personnalisé par mission) -->
+<!-- DISCIPLINES DYNAMIQUES (LMOC) -->
+{% if page.disciplines %}
+<section id="disciplines" style="background:var(--light)">
+  <div class="section-inner">
+    <p class="section-label fade-in">{{ page.disciplines_label }}</p>
+    <h2 class="section-title fade-in">{{ page.disciplines_title }}</h2>
+    <p class="section-intro fade-in">{{ page.disciplines_intro }}</p>
+    <div class="disciplines-grid">
+      {% for disc in page.disciplines %}
+      <div class="discipline-card fade-in" {% if disc.code %}data-discipline="{{ disc.code }}"{% endif %}>
+        <img src="{{ disc.img }}" alt="{{ disc.title }}" loading="lazy">
+        <div class="discipline-card-title">{{ disc.title }}<span>{{ disc.sub }}</span></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- MISSIONS DYNAMIQUES (Gère Liste Simple OU Groupes avec titres) -->
 <section id="missions">
   <div class="section-inner">
     <p class="section-label fade-in">{{ page.missions_label }}</p>
     <h2 class="section-title fade-in">{{ page.missions_title }}</h2>
-    <p class="section-intro fade-in">{{ page.missions_intro }}</p>
-    <div class="missions-list">
-      {% for mission in page.missions %}
-      <div class="mission-item fade-in">
-        <div class="mission-num">
-          <span>{{ mission.num }}</span>
-          <div class="mission-icon-hover">
-            <svg viewBox="0 0 24 24">
-              {% if mission.svg_icon %}{{ mission.svg_icon }}{% else %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>{% endif %}
-            </svg>
+    {% if page.missions_intro %><p class="section-intro fade-in">{{ page.missions_intro }}</p>{% endif %}
+    
+    {% if page.mission_groups %}
+      {% for group in page.mission_groups %}
+        <div class="mission-group-title fade-in">{{ group.title }}</div>
+        <div class="missions-list" style="margin-bottom:2rem">
+          {% for mission in group.missions %}
+          <div class="mission-item fade-in">
+            <div class="mission-num">
+              <span>{{ mission.num }}</span>
+              <div class="mission-icon-hover">
+                <svg viewBox="0 0 24 24">
+                  {% if mission.svg_icon %}{{ mission.svg_icon }}{% else %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>{% endif %}
+                </svg>
+              </div>
+            </div>
+            <div class="mission-content">
+              <h3>{{ mission.title }}</h3>
+              <p>{{ mission.desc }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="missions-list">
+        {% for mission in page.missions %}
+        <div class="mission-item fade-in">
+          <div class="mission-num">
+            <span>{{ mission.num }}</span>
+            <div class="mission-icon-hover">
+              <svg viewBox="0 0 24 24">
+                {% if mission.svg_icon %}{{ mission.svg_icon }}{% else %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>{% endif %}
+              </svg>
+            </div>
+          </div>
+          <div class="mission-content">
+            <h3>{{ mission.title }}</h3>
+            <p>{{ mission.desc }}</p>
           </div>
         </div>
-        <div class="mission-content">
-          <h3>{{ mission.title }}</h3>
-          <p>{{ mission.desc }}</p>
-        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
+    {% endif %}
   </div>
 </section>
 
@@ -376,7 +441,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
 </section>
 {% endif %}
 
-<!-- NAVIGATION EXPERIENCES DYNAMIQUE (Gère Précédent et Suivant) -->
+<!-- NAVIGATION EXPERIENCES DYNAMIQUE -->
 <section style="padding:2rem 5%">
   <div class="exp-nav">
     {% if page.prev_url %}
@@ -405,7 +470,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
  </div>
 </section>
 
-<!-- CTA CONTACT & FOOTER (Fixes) -->
+<!-- CTA CONTACT & FOOTER -->
 <section class="cta-contact">
   <div class="cta-contact-inner">
     <p class="section-label fade-in">Intéressé par mon profil ?</p>
