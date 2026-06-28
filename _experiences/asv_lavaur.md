@@ -1,6 +1,6 @@
 ---
 meta_title: ASV Lavaur — Kévin Massat
-meta_description: Découvrez mon expérience en tant que Chargé de communication à l'ASV Lavaur, dans le cadre d'un stage de septembre 2021 à avril 2022.
+meta_description: Découvrez mon expérience en tant que Chargé de communication à l'ASV Lavaur, dans le cadre d'un stage de septembre 2021 à avril 2022
 company_short: ASV Lavaur
 logo: Images/Logo_asv_lavaur.png
 logo_class: page-hero-logo-asv
@@ -35,6 +35,10 @@ missions:
     title: Communication digitale
     desc: Développement de la communication de l'association sur son site internet et ses réseaux sociaux.
     svg_icon: <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+missions_bg: ''
+articles_label: ''
+articles_title: ''
+articles_intro: ''
 ressources:
   - label: Site de l'ASV Lavaur
     url: https://asv-lavaur.ffr.fr/
