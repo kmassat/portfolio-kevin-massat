@@ -1,9 +1,7 @@
 backend:
   name: github
-  # IMPORTANT : Remplacez par votre vrai identifiant et le nom de votre dépôt GitHub
-  # Exemple : mon-pseudo/mon-site-web
-  repo: VOTRE_PSEUDO_GITHUB/VOTRE_DEPOT_GITHUB
-  branch: main # Mettez 'master' si votre branche s'appelle master
+  repo: kmassat/portfolio-kevin-massat
+  branch: main # (Si votre branche principale s'appelle master, changez main en master)
 
 media_folder: "images" 
 public_folder: "/images"
