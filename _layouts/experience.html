@@ -123,6 +123,15 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .discipline-card[data-discipline="rallye"] img{object-position:center 40%;}
 .discipline-card[data-discipline="endurance-tt"] img{object-position:center 35%;}
 
+/* STYLES ARTICLES */
+.articles-section{background:var(--white)}
+.articles-list{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.articles-list li a{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--light);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;text-decoration:none;color:var(--text);font-size:.88rem;font-weight:500;transition:border-color .2s,background .2s}
+.articles-list li a:hover{border-color:#973242;background:rgba(151,50,66,.06)}
+.articles-list li a svg{width:14px;height:14px;stroke:var(--muted-light);flex-shrink:0;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.articles-list li a:hover svg{stroke:#973242}
+@media(max-width:640px){ .articles-list li a{font-size:.8rem;padding:.85rem 1rem} }
+
 /* STYLES MISSIONS */
 #missions{background:var(--white)}
 .missions-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
