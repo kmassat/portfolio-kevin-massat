@@ -1,4 +1,4 @@
- ---
+---
 layout: experience
 permalink: /ctb_hg.html
 meta_title: "Centre Technique Bretagne Henri Guérin — Kévin Massat"
