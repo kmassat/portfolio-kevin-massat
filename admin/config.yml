@@ -32,8 +32,8 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Balise Titre SEO (max 60 caractères)", name: "meta_title", widget: "string", pattern: ['^.{1,60}$', "Le titre SEO est trop long ! Saisissez moins de 60 caractères."] }
-      - { label: "Méta Description (max 160 caractères)", name: "meta_description", widget: "text", pattern: ['^[\s\S]{1,160}$', "La description dépasse 160 caractères !"] }
+      - { label: "Balise Titre SEO", name: "meta_title", widget: "string", maxlength: 60 }
+      - { label: "Méta Description", name: "meta_description", widget: "text", maxlength: 160 }
       
       - { label: "Nom court", name: "company_short", widget: "string" }
       - { label: "Logo Principal", name: "logo", widget: "image" }
