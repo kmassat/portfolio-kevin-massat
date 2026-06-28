@@ -5,4 +5,4 @@ collections:
     output: false
   experiences:
     output: true
-    permalink: /:slug.html # Magique : génère la page à la racine exacte de votre site !
+    permalink: /:slug.html
