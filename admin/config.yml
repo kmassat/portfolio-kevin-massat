@@ -1,4 +1,29 @@
-  # 3. EXPERIENCES (Pages complètes avec Audit SEO)
+backend:
+  name: github
+  repo: kmassat/portfolio-kevin-massat
+  branch: main
+
+media_folder: "Images" 
+public_folder: "Images"
+
+collections:
+  # 1. ACCUEIL & A PROPOS
+  - name: "accueil"
+    label: "🏠 Page d'accueil & À propos"
+    files:
+      - label: "Textes principaux"
+        name: "textes"
+        file: "_data/accueil.yml"
+        fields:
+          - { label: "Badge disponibilité", name: "badge", widget: "string" }
+          - { label: "Titre principal (HTML autorisé pour <br> et <em>)", name: "titre", widget: "string" }
+          - { label: "Sous-titre (Hero)", name: "sous_titre", widget: "text" }
+          - { label: "Lien de votre CV (PDF)", name: "lien_cv", widget: "string" }
+          - { label: "Paragraphe À propos 1", name: "apropos_1", widget: "text" }
+          - { label: "Paragraphe À propos 2", name: "apropos_2", widget: "text" }
+          - { label: "Paragraphe À propos 3", name: "apropos_3", widget: "text" }
+
+  # 2. EXPERIENCES (Pages complètes avec Audit SEO)
   - name: "experiences"
     label: "⭐ Mes Expériences"
     folder: "_experiences"
