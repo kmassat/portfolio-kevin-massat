@@ -45,6 +45,7 @@ a:focus-visible,button:focus-visible,.cta-btn:focus-visible,.exp-nav-link:focus-
 .page-back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .page-hero-content{display:flex;align-items:flex-start;gap:2rem;flex-wrap:wrap;}
 .page-hero-logo{width:72px;height:72px;object-fit:contain;border-radius:var(--radius);border:1.5px solid rgba(255,255,255,.2);padding:8px;background:rgba(255,255,255,.95);box-shadow:var(--shadow);flex-shrink:0;}
+.page-hero-logo-asv{padding:16px;object-fit:contain;}
 .page-hero-text{flex:1;min-width:280px;}
 .page-hero-text h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.025em;color:var(--white);margin-bottom:.4rem;line-height:1.15;}
 .page-hero-company{font-size:1rem;color:rgba(255,255,255,.8);font-weight:600;margin-bottom:.75rem;}
@@ -138,7 +139,7 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .mission-num span{transition:opacity .3s ease;display:inline-block}
 
 .resources-grid{display:flex;gap:1rem;flex-wrap:wrap}
-.resource-link{display:inline-flex;align-items:center;gap:.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:.875rem 1.25rem;text-decoration:none;color:var(--dark);font-size:.88rem;font-weight:600;transition:border-color .2s,box-shadow .2s,transform .2s;box-shadow:var(--shadow)}
+.resource-link{display:inline-flex;align-items:center;gap:.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:.875rem 1.25rem;text-decoration:none;color:var(--dark);font-size:.88rem;font-weight:600;transition:all .3s ease;box-shadow:var(--shadow)}
 .resource-link:hover{border-color:var(--yellow-dark);box-shadow:var(--shadow-yellow);transform:translateY(-2px)}
 .resource-link[data-color]:hover{border-color:var(--hover-c);box-shadow:0 6px 20px var(--hover-shadow);transform:translateY(-2px)}
 .resource-link[data-color]:hover svg{stroke:var(--hover-c)}
@@ -146,10 +147,12 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .resource-link.resource-ca:hover svg{stroke:#308276}
 .resource-link.resource-village:hover{border-color:#F4CC66;box-shadow:0 6px 20px rgba(244,204,102,.3);transform:translateY(-2px)}
 .resource-link.resource-village:hover svg{stroke:#F4CC66}
+.resource-link.resource-gradient:hover{border-color:transparent;background:linear-gradient(135deg, #0000FE, #FE0000) padding-box, linear-gradient(135deg, #0000FE, #FE0000) border-box;color:var(--white);box-shadow:0 6px 20px rgba(127,0,127,.3);transform:translateY(-2px)}
+.resource-link.resource-gradient:hover svg{stroke:var(--white)}
 .resource-link svg{width:18px;height:18px;stroke:var(--yellow-dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
 .exp-nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:3rem 0;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
-.exp-nav-link{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--muted);font-size:.88rem;font-weight:600;padding:.75rem 1.25rem;border:1.5px solid var(--border);border-radius:var(--radius-sm);transition:border-color .2s,color .2s,box-shadow .2s,background .2s}
+.exp-nav-link{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--muted);font-size:.88rem;font-weight:600;padding:.75rem 1.25rem;border:1.5px solid var(--border);border-radius:var(--radius-sm);transition:border-color .3s,color .3s,box-shadow .3s,background .3s}
 .exp-nav-link:hover{border-color:var(--yellow);color:var(--dark);box-shadow:var(--shadow);background:var(--yellow-soft)}
 .exp-nav-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .exp-nav-link-info{display:flex;flex-direction:column}
@@ -295,7 +298,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   </button>
 </nav>
 
-<!-- PAGE HERO -->
+<!-- PAGE HERO DYNAMIQUE -->
 <header class="page-hero">
   <div class="page-hero-inner">
     <a href="index.html#experiences" class="page-back">
@@ -303,7 +306,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
       Retour aux expériences
     </a>
     <div class="page-hero-content">
-      <img src="{{ page.logo }}" alt="{{ page.company_short }}" class="page-hero-logo" loading="eager">
+      <img src="{{ page.logo }}" alt="{{ page.company_short }}" class="page-hero-logo {{ page.logo_class }}" loading="eager">
       {% if page.logo2 %}
       <img src="{{ page.logo2 }}" alt="{{ page.company_short }}" class="page-hero-logo" loading="eager">
       {% endif %}
@@ -340,7 +343,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   </div>
 </section>
 
-<!-- ENTITES / EVENEMENTS DYNAMIQUES (Gère les ID #entites ou #evenements) -->
+<!-- ENTITES / EVENEMENTS DYNAMIQUES -->
 {% if page.entites %}
 <section id="{{ page.entites_id | default: 'entites' }}" style="background:var(--light)">
   <div class="section-inner">
