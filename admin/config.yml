@@ -35,3 +35,73 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Texte du lien bouton (ex: Voir le compte Instagram →)", name: "link_text", widget: "string", required: false }
       - { label: "URL du lien", name: "link_url", widget: "string", required: false }
+      
+  # 3. EXPERIENCES (Pages complètes avec Audit SEO)
+  - name: "experiences"
+    label: "⭐ Mes Expériences"
+    folder: "_experiences"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      # --- AUDIT SEO EN TEMPS REEL ---
+      - { label: "Balise Titre SEO (Aperçu Google - max 60 caractères)", name: "meta_title", widget: "string", pattern: ['^.{1,60}$', "Le titre SEO est trop long ! Saisissez moins de 60 caractères pour éviter qu'il soit tronqué par Google."] }
+      - { label: "Méta Description (Aperçu Google - max 160 caractères)", name: "meta_description", widget: "text", pattern: ['^[\s\S]{1,160}$', "La description dépasse 160 caractères ! Google risque de la couper dans les résultats de recherche."] }
+      
+      # --- CONFIGURATION HERO ---
+      - { label: "Nom court de l'entreprise (ex: Groupe CTA)", name: "company_short", widget: "string" }
+      - { label: "Logo Entreprise", name: "logo", widget: "image" }
+      - { label: "Bannière de fond (Hero)", name: "hero_bg", widget: "image" }
+      - { label: "Votre Rôle / Poste", name: "role", widget: "string" }
+      - { label: "Nom complet & lieu (ex: Groupe CTA (...) — Toulouse)", name: "company", widget: "string" }
+      - { label: "Période (ex: Sept. 2025 — en cours)", name: "period", widget: "string" }
+      - { label: "Lieu (ex: Toulouse)", name: "location", widget: "string" }
+      - { label: "Type de contrat (ex: CDI)", name: "contract_type", widget: "string" }
+      - { label: "Classe couleur du contrat (type-cdd, type-alt, type-stage, type-benevolat)", name: "contract_class", widget: "select", options: ["type-cdd", "type-alt", "type-stage", "type-benevolat"] }
+
+      # --- SECTION PRESENTATION ---
+      - { label: "Sur-titre Présentation (ex: L'entreprise)", name: "pres_label", widget: "string" }
+      - { label: "Titre Présentation (ex: Le Groupe CTA)", name: "pres_title", widget: "string" }
+      - { label: "Texte de présentation (HTML autorisé pour <p> et <strong>)", name: "pres_text", widget: "text" }
+      - { label: "Image de présentation", name: "pres_img", widget: "string" } # String pour coller les liens Unsplash
+
+      # --- SECTION ENTITES (Optionnel) ---
+      - { label: "Sur-titre Entités", name: "entites_label", widget: "string", required: false }
+      - { label: "Titre Entités", name: "entites_title", widget: "string", required: false }
+      - { label: "Intro Entités", name: "entites_intro", widget: "text", required: false }
+      - label: "Liste des agences / entités"
+        name: "entites"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Description", name: "desc", widget: "text" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - { label: "Code marque CSS (ex: sop, meeting, business, voyages)", name: "brand_code", widget: "string" }
+          - { label: "Logo horizontal large ?", name: "is_wide", widget: "boolean", default: false }
+
+      # --- SECTION MISSIONS ---
+      - { label: "Sur-titre Missions", name: "missions_label", widget: "string" }
+      - { label: "Titre Missions", name: "missions_title", widget: "string" }
+      - { label: "Intro Missions", name: "missions_intro", widget: "text" }
+      - label: "Liste des missions"
+        name: "missions"
+        widget: "list"
+        fields:
+          - { label: "Numéro (ex: 01)", name: "num", widget: "string" }
+          - { label: "Titre de la mission", name: "title", widget: "string" }
+          - { label: "Description de la mission", name: "desc", widget: "text" }
+
+      # --- SECTION RESSOURCES (Optionnel) ---
+      - label: "Liste des ressources / liens"
+        name: "ressources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Nom du bouton", name: "label", widget: "string" }
+          - { label: "URL du site", name: "url", widget: "string" }
+          - { label: "Couleur CSS (ex: #CB1F48)", name: "color", widget: "string" }
+
+      # --- NAVIGATION EXPERIENCE SUIVANTE (Optionnel) ---
+      - { label: "URL de la page suivante (ex: ca_sud_med.html)", name: "next_url", widget: "string", required: false }
+      - { label: "Titre de la page suivante (ex: Crédit Agricole Sud Méditerranée)", name: "next_title", widget: "string", required: false }
+      - { label: "Couleur au survol (ex: #308276)", name: "next_color", widget: "string", required: false }
