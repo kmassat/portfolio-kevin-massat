@@ -1,0 +1,82 @@
+---
+layout: experience
+meta_title: "Groupe CTA — Kévin Massat"
+meta_description: "Découvrez mon expérience en tant que Responsable marketing et communication au sein du Groupe CTA (SOP Events, CTA Business Travel, CTA Meeting & Events, CTA Voyages) à Toulouse."
+company_short: "Groupe CTA"
+logo: "Images/Logo_groupe_cta.png"
+hero_bg: "Images/banniere_gpe_cta.png"
+role: "Responsable marketing et communication"
+company: "Groupe CTA (SOP Events, CTA Business Travel, CTA Meeting & Events, CTA Voyages) — Toulouse"
+period: "Sept. 2025 — en cours"
+location: "Toulouse"
+contract_type: "CDI"
+contract_class: "type-cdd"
+
+pres_label: "L'entreprise"
+pres_title: "Le Groupe CTA"
+pres_text: "<p>Le Groupe CTA est un <strong>spécialiste du voyage et de l'événementiel</strong> présent depuis plus de trois décennies. Sa force réside dans une idée simple : créer des expériences qui ont du sens.</p><p>Qu'il s'agisse d'un déplacement professionnel, d'un séminaire, d'un voyage d'entreprise ou d'un séjour individuel, CTA met <strong>l'humain au centre</strong> et conçoit des moments qui favorisent le lien, l'engagement et le plaisir de vivre une expérience bien pensée.</p><p>Le groupe s'articule autour de <strong>quatre agences complémentaires</strong>, chacune spécialisée dans un domaine précis du voyage et de l'événementiel.</p>"
+pres_img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
+
+entites_label: "Les entités"
+entites_title: "Quatre agences complémentaires"
+entites_intro: "Travaillant pour les 4 entités du Groupe CTA, j'interviens sur des problématiques variées allant de l'événementiel au voyage individuel."
+entites:
+  - title: "SOP Events"
+    desc: "Organisation d'événements corporate sur mesure : séminaires, soirées de gala, congrès. Une approche créative centrée sur l'émotion et l'impact."
+    logo: "Images/logo_sop_events.png"
+    brand_code: "sop"
+    is_wide: false
+  - title: "CTA Meeting & Events"
+    desc: "Team building, voyages d'incentive, conventions. Des événements fédérateurs qui renforcent la cohésion d'équipe et l'image de marque."
+    logo: "Images/logo_cta_me.png"
+    brand_code: "meeting"
+    is_wide: true
+  - title: "CTA Business Travel"
+    desc: "Voyages d'affaires : accompagnement des organisations dans la gestion de leurs déplacements professionnels. Outils performants et partenariats négociés."
+    logo: "Images/logo_cta_bt.png"
+    brand_code: "business"
+    is_wide: true
+  - title: "CTA Voyages"
+    desc: "Voyages individuels : séjours personnalisés en France et à l'international pour les particuliers et groupes privés, sans contraintes."
+    logo: "Images/logo_cta_voyages.png"
+    brand_code: "voyages"
+    is_wide: true
+
+missions_label: "Mon rôle"
+missions_title: "Mes principales missions"
+missions_intro: "Intervenant pour les 4 entités du groupe, mes missions couvrent l'ensemble du spectre communication et marketing."
+missions:
+  - num: "01"
+    title: "Refonte des sites internet"
+    desc: "Refonte des sites internet et réflexion sur la commercialisation des offres : parcours utilisateur, référencement SEO, identité visuelle."
+  - num: "02"
+    title: "Newsletters & base de contacts"
+    desc: "Création des newsletters et qualification de la liste de contacts pour des campagnes ciblées et performantes."
+  - num: "03"
+    title: "Stratégie réseaux sociaux"
+    desc: "Élaboration de la stratégie de communication sur les réseaux sociaux : planning éditorial, création de contenu, suivi des performances."
+  - num: "04"
+    title: "Supports de communication"
+    desc: "Préparation des supports physiques et digitaux pour l'ensemble des entités du groupe."
+  - num: "05"
+    title: "Communication interne"
+    desc: "Communication et animation en interne, reporting des performances et coordination entre les équipes."
+  - num: "06"
+    title: "Stratégie RSE"
+    desc: "Mise en place d'une stratégie visant à lister les points d'amélioration, préciser le type de document ou de preuve attendu, proposer une méthodologie structurée pour y répondre de manière efficace et organiser les actions."
+
+ressources:
+  - label: "SOP Events"
+    url: "https://sop-events.fr/"
+    color: "#CB1F48"
+  - label: "CTA Business Travel"
+    url: "https://ctabusinesstravel.com/"
+    color: "#0277BD"
+  - label: "CTA Meeting & Events"
+    url: "https://ctameetingevents.fr/"
+    color: "#467FF7"
+
+next_url: "ca_sud_med.html"
+next_title: "Crédit Agricole Sud Méditerranée"
+next_color: "#308276"
+---
