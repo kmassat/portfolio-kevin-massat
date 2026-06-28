@@ -35,6 +35,7 @@ collections:
       
       - { label: "Nom court", name: "company_short", widget: "string" }
       - { label: "Logo Principal", name: "logo", widget: "image" }
+      - { label: "Classe CSS optionnelle du logo (ex: page-hero-logo-asv)", name: "logo_class", widget: "string", required: false }
       - { label: "Second Logo (Optionnel)", name: "logo2", widget: "image", required: false }
       - { label: "Bannière de fond (Hero)", name: "hero_bg", widget: "image" }
       - { label: "Votre Rôle / Poste", name: "role", widget: "string" }
@@ -116,8 +117,8 @@ collections:
         fields:
           - { label: "Nom du bouton", name: "label", widget: "string" }
           - { label: "URL du site", name: "url", widget: "string" }
-          - { label: "Classe CSS spécifique", name: "custom_class", widget: "string", required: false }
-          - { label: "Couleur CSS (ex: #BD9E54)", name: "color", widget: "string", required: false }
+          - { label: "Classe CSS spécifique (ex: resource-gradient)", name: "custom_class", widget: "string", required: false }
+          - { label: "Couleur CSS", name: "color", widget: "string", required: false }
 
       - { label: "URL de la page PRECEDENTE", name: "prev_url", widget: "string", required: false }
       - { label: "Titre de la page PRECEDENTE", name: "prev_title", widget: "string", required: false }
@@ -125,4 +126,4 @@ collections:
 
       - { label: "URL de la page SUIVANTE", name: "next_url", widget: "string", required: false }
       - { label: "Titre de la page SUIVANTE", name: "next_title", widget: "string", required: false }
-      - { label: "Couleur survol SUIVANTE (ex: gradient)", name: "next_color", widget: "string", required: false }
+      - { label: "Couleur survol SUIVANTE", name: "next_color", widget: "string", required: false }
