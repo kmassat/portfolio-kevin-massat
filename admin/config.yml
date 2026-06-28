@@ -33,9 +33,9 @@ collections:
       - { label: "Balise Titre SEO (max 60 caractères)", name: "meta_title", widget: "string", pattern: ['^.{1,60}$', "Le titre SEO est trop long ! Saisissez moins de 60 caractères."] }
       - { label: "Méta Description (max 160 caractères)", name: "meta_description", widget: "text", pattern: ['^[\s\S]{1,160}$', "La description dépasse 160 caractères !"] }
       
-      - { label: "Nom court (ex: Crédit Agricole)", name: "company_short", widget: "string" }
+      - { label: "Nom court (ex: LMOC)", name: "company_short", widget: "string" }
       - { label: "Logo Principal", name: "logo", widget: "image" }
-      - { label: "Second Logo (Optionnel - ex: Le Village by CA)", name: "logo2", widget: "image", required: false }
+      - { label: "Second Logo (Optionnel)", name: "logo2", widget: "image", required: false }
       - { label: "Bannière de fond (Hero)", name: "hero_bg", widget: "image" }
       - { label: "Votre Rôle / Poste", name: "role", widget: "string" }
       - { label: "Nom complet & lieu", name: "company", widget: "string" }
@@ -48,8 +48,9 @@ collections:
       - { label: "Titre Présentation", name: "pres_title", widget: "string" }
       - { label: "Texte de présentation (HTML autorisé pour <p> et <strong>)", name: "pres_text", widget: "text" }
       - { label: "Image de présentation", name: "pres_img", widget: "string" }
+      - { label: "Cadrage CSS optionnel (ex: center 60%)", name: "pres_img_pos", widget: "string", required: false }
 
-      - { label: "Sur-titre Entités", name: "entites_label", widget: "string", required: false }
+      - { label: "Sur-titre Entités (CA/CTA)", name: "entites_label", widget: "string", required: false }
       - { label: "Titre Entités", name: "entites_title", widget: "string", required: false }
       - { label: "Intro Entités", name: "entites_intro", widget: "text", required: false }
       - label: "Liste des agences / entités"
@@ -60,21 +61,51 @@ collections:
           - { label: "Titre", name: "title", widget: "string" }
           - { label: "Description", name: "desc", widget: "text" }
           - { label: "Logo (Image)", name: "logo", widget: "image", required: false }
-          - { label: "OU Icône SVG pure (code <path...>)", name: "svg_icon", widget: "string", required: false }
-          - { label: "Code marque CSS (ex: sop, meeting...)", name: "brand_code", widget: "string", required: false }
+          - { label: "OU Icône SVG pure", name: "svg_icon", widget: "string", required: false }
+          - { label: "Code marque CSS", name: "brand_code", widget: "string", required: false }
           - { label: "Logo horizontal large ?", name: "is_wide", widget: "boolean", default: false }
+
+      - { label: "Sur-titre Disciplines (LMOC)", name: "disciplines_label", widget: "string", required: false }
+      - { label: "Titre Disciplines", name: "disciplines_title", widget: "string", required: false }
+      - { label: "Intro Disciplines", name: "disciplines_intro", widget: "text", required: false }
+      - label: "Liste des disciplines"
+        name: "disciplines"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Titre (ex: Motocross)", name: "title", widget: "string" }
+          - { label: "Sous-titre (ex: Terrain · Spectacle)", name: "sub", widget: "string" }
+          - { label: "Image", name: "img", widget: "image" }
+          - { label: "Code CSS recadrage (ex: endurance-tt, trial, rallye)", name: "code", widget: "string", required: false }
 
       - { label: "Sur-titre Missions", name: "missions_label", widget: "string" }
       - { label: "Titre Missions", name: "missions_title", widget: "string" }
-      - { label: "Intro Missions", name: "missions_intro", widget: "text" }
-      - label: "Liste des missions"
+      - { label: "Intro Missions (Optionnel)", name: "missions_intro", widget: "text", required: false }
+      
+      - label: "LISTE DE MISSIONS SIMPLES (CA/CTA)"
         name: "missions"
         widget: "list"
+        required: false
         fields:
-          - { label: "Numéro (ex: 01)", name: "num", widget: "string" }
+          - { label: "Numéro", name: "num", widget: "string" }
           - { label: "Titre de la mission", name: "title", widget: "string" }
-          - { label: "Description de la mission", name: "desc", widget: "text" }
-          - { label: "Code SVG au survol (code <path...>)", name: "svg_icon", widget: "string", required: false }
+          - { label: "Description", name: "desc", widget: "text" }
+          - { label: "Code SVG survol", name: "svg_icon", widget: "string", required: false }
+
+      - label: "OU GROUPES DE MISSIONS AVEC TITRES (LMOC)"
+        name: "mission_groups"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Titre du groupe (ex: Communication externe)", name: "title", widget: "string" }
+          - label: "Missions du groupe"
+            name: "missions"
+            widget: "list"
+            fields:
+              - { label: "Numéro", name: "num", widget: "string" }
+              - { label: "Titre de la mission", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Code SVG survol", name: "svg_icon", widget: "string", required: false }
 
       - label: "Liste des ressources / liens"
         name: "ressources"
@@ -83,13 +114,13 @@ collections:
         fields:
           - { label: "Nom du bouton", name: "label", widget: "string" }
           - { label: "URL du site", name: "url", widget: "string" }
-          - { label: "Classe CSS spécifique (ex: resource-ca, resource-village)", name: "custom_class", widget: "string", required: false }
+          - { label: "Classe CSS spécifique", name: "custom_class", widget: "string", required: false }
           - { label: "Couleur CSS (ex: #CB1F48)", name: "color", widget: "string", required: false }
 
-      - { label: "URL de la page PRECEDENTE (ex: groupe_cta.html)", name: "prev_url", widget: "string", required: false }
+      - { label: "URL de la page PRECEDENTE", name: "prev_url", widget: "string", required: false }
       - { label: "Titre de la page PRECEDENTE", name: "prev_title", widget: "string", required: false }
-      - { label: "Couleur survol PRECEDENTE (ex: #272727)", name: "prev_color", widget: "string", required: false }
+      - { label: "Couleur survol PRECEDENTE", name: "prev_color", widget: "string", required: false }
 
-      - { label: "URL de la page SUIVANTE (ex: lmoc.html)", name: "next_url", widget: "string", required: false }
+      - { label: "URL de la page SUIVANTE", name: "next_url", widget: "string", required: false }
       - { label: "Titre de la page SUIVANTE", name: "next_title", widget: "string", required: false }
-      - { label: "Couleur survol SUIVANTE (ex: #020065)", name: "next_color", widget: "string", required: false }
+      - { label: "Couleur survol SUIVANTE", name: "next_color", widget: "string", required: false }
