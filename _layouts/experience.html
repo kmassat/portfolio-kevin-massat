@@ -71,7 +71,7 @@ h2.section-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.
 .pres-text p strong{color:var(--dark);font-weight:600}
 .pres-img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow-md);object-fit:cover;aspect-ratio:4/3}
 
-/* STYLES ENTITES & EVENEMENTS (CA, CTA, CTB) */
+/* STYLES ENTITES & EVENEMENTS */
 .entites-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem}
 .entite-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:all .35s ease;border-top:4px solid var(--yellow);position:relative;overflow:hidden}
 .entite-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);border-color:var(--yellow)}
@@ -376,7 +376,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
   <div class="section-inner">
     <p class="section-label fade-in">{{ page.disciplines_label }}</p>
     <h2 class="section-title fade-in">{{ page.disciplines_title }}</h2>
-    <p class="section-intro fade-in">{{ page.disciplines_intro }}</p>
+    {% if page.disciplines_intro %><p class="section-intro fade-in">{{ page.disciplines_intro }}</p>{% endif %}
     <div class="disciplines-grid">
       {% for disc in page.disciplines %}
       <div class="discipline-card fade-in" {% if disc.code %}data-discipline="{{ disc.code }}"{% endif %}>
