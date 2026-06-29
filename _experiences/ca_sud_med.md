@@ -26,15 +26,19 @@ entites:
   - title: "Créer de la valeur sur les territoires"
     desc: "Favoriser l'émergence de projets innovants ancrés dans l'économie locale."
     svg_icon: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'
+    brand_code: "village"
   - title: "Décentraliser l'innovation"
     desc: "Rendre l'innovation accessible au-delà des grandes métropoles."
     svg_icon: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>'
+    brand_code: "village"
   - title: "Répondre aux enjeux de demain"
     desc: "Accompagner la transformation des entreprises face aux défis actuels."
     svg_icon: '<path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/>'
+    brand_code: "village"
   - title: "Créer un avenir durable"
     desc: "Soutenir des projets à impact positif pour un développement responsable."
     svg_icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'
+    brand_code: "village"
 
 missions_label: "Mon rôle"
 missions_title: "Mes principales missions"
