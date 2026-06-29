@@ -25,15 +25,22 @@ collections:
           - { label: "Paragraphe À propos 2", name: "apropos_2", widget: "text" }
           - { label: "Paragraphe À propos 3", name: "apropos_3", widget: "text" }
 
-   # 2. EXPERIENCES (Pages complètes avec Audit SEO)
+  # 2. EXPERIENCES (Pages complètes avec Audit SEO)
   - name: "experiences"
     label: "⭐ Mes Expériences"
     folder: "_experiences"
     create: true
     slug: "{{slug}}"
+    preview_path: "{{slug}}.html" # ACTIVATION DU BOUTON PREVISUALISATION SPECIFIQUE !
     fields:
       - { label: "Balise Titre SEO", name: "meta_title", widget: "string", maxlength: 60 }
       - { label: "Méta Description", name: "meta_description", widget: "text", maxlength: 160 }
+      
+      - label: "Bullet points (Pour la carte de la page d'accueil)"
+        name: "summary_bullets"
+        widget: "list"
+        required: false
+        field: { label: "Puce / Bullet point", name: "bullet", widget: "string" }
       
       - { label: "Nom court", name: "company_short", widget: "string" }
       - { label: "Logo Principal", name: "logo", widget: "image" }
