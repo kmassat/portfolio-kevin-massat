@@ -25,13 +25,14 @@ collections:
           - { label: "Paragraphe À propos 2", name: "apropos_2", widget: "text" }
           - { label: "Paragraphe À propos 3", name: "apropos_3", widget: "text" }
 
-  # 2. EXPERIENCES (Pages complètes avec Audit SEO)
+   # 2. EXPERIENCES (Pages complètes avec Audit SEO)
   - name: "experiences"
     label: "⭐ Mes Expériences"
     folder: "_experiences"
     create: true
     slug: "{{slug}}"
-    preview_path: "{{slug}}.html" # ACTIVATION DU BOUTON PREVISUALISATION SPECIFIQUE !
+    preview_path: "{{slug}}.html"
+    summary: "💼 {{role}} chez {{company_short}} ({{period}})" # POINT 1 : RESUME ULTRACONTRASTE !
     fields:
       - { label: "Balise Titre SEO", name: "meta_title", widget: "string", maxlength: 60 }
       - { label: "Méta Description", name: "meta_description", widget: "text", maxlength: 160 }
@@ -41,110 +42,136 @@ collections:
         widget: "list"
         required: false
         field: { label: "Puce / Bullet point", name: "bullet", widget: "string" }
-      
-      - { label: "Nom court", name: "company_short", widget: "string" }
-      - { label: "Logo Principal", name: "logo", widget: "image" }
-      - { label: "Classe CSS optionnelle du logo (ex: page-hero-logo-asv)", name: "logo_class", widget: "string", required: false }
-      - { label: "Second Logo (Optionnel)", name: "logo2", widget: "image", required: false }
-      - { label: "Bannière de fond (Hero)", name: "hero_bg", widget: "image" }
-      - { label: "Votre Rôle / Poste", name: "role", widget: "string" }
-      - { label: "Nom complet & lieu", name: "company", widget: "string" }
-      - { label: "Période", name: "period", widget: "string" }
-      - { label: "Lieu", name: "location", widget: "string" }
-      - { label: "Type de contrat", name: "contract_type", widget: "string" }
-      - { label: "Classe couleur du contrat (type-cdd, type-alt, type-stage, type-benevolat)", name: "contract_class", widget: "select", options: ["type-cdd", "type-alt", "type-stage", "type-benevolat"] }
+      - { label: "Couleur bord gauche au survol (ex: #308276 ou gradient)", name: "hover_color", widget: "string", default: "#272727", required: false }
 
-      - { label: "Sur-titre Présentation", name: "pres_label", widget: "string" }
-      - { label: "Titre Présentation", name: "pres_title", widget: "string" }
-      - { label: "Texte de présentation", name: "pres_text", widget: "text" }
-      - { label: "Image de présentation", name: "pres_img", widget: "string" }
-      - { label: "Cadrage CSS optionnel (ex: center 60%)", name: "pres_img_pos", widget: "string", required: false }
-
-      - { label: "Identifiant HTML section (ex: evenements ou entites)", name: "entites_id", widget: "string", default: "entites", required: false }
-      - { label: "Sur-titre Entités/Evenements", name: "entites_label", widget: "string", required: false }
-      - { label: "Titre Entités/Evenements", name: "entites_title", widget: "string", required: false }
-      - { label: "Intro Entités", name: "entites_intro", widget: "text", required: false }
-      - label: "Liste des agences / événements"
-        name: "entites"
-        widget: "list"
-        required: false
+      # POINT 5 : GROUPES ESCAMOTABLES (flat: true évite de casser vos fiches existantes)
+      - label: "⚙️ Section Hero (Bannière & Logos)"
+        name: "group_hero"
+        widget: "object"
+        flat: true
+        collapsed: true
         fields:
-          - { label: "Titre", name: "title", widget: "string" }
-          - { label: "Description", name: "desc", widget: "text" }
-          - { label: "Logo (Image)", name: "logo", widget: "image", required: false }
-          - { label: "OU Icône SVG pure", name: "svg_icon", widget: "string", required: false }
-          - { label: "Code marque CSS (ex: academy, tournoi)", name: "brand_code", widget: "string", required: false }
-          - { label: "Logo horizontal moyen (icon-wide) ?", name: "is_wide", widget: "boolean", default: false }
-          - { label: "Logo horizontal grand (icon-wide-lg) ?", name: "is_wide_lg", widget: "boolean", default: false }
+          - { label: "Nom court", name: "company_short", widget: "string" }
+          - { label: "Logo Principal", name: "logo", widget: "image" }
+          - { label: "Classe CSS optionnelle du logo", name: "logo_class", widget: "string", required: false }
+          - { label: "Second Logo (Optionnel)", name: "logo2", widget: "image", required: false }
+          - { label: "Bannière de fond (Hero)", name: "hero_bg", widget: "image" }
+          - { label: "Votre Rôle / Poste", name: "role", widget: "string" }
+          - { label: "Nom complet & lieu", name: "company", widget: "string" }
+          - { label: "Période", name: "period", widget: "string" }
+          - { label: "Lieu", name: "location", widget: "string" }
+          - { label: "Type de contrat", name: "contract_type", widget: "string" }
+          - { label: "Classe couleur du contrat (type-cdd, type-alt, type-stage, type-benevolat)", name: "contract_class", widget: "select", options: ["type-cdd", "type-alt", "type-stage", "type-benevolat"] }
 
-      - { label: "Sur-titre Disciplines", name: "disciplines_label", widget: "string", required: false }
-      - { label: "Titre Disciplines", name: "disciplines_title", widget: "string", required: false }
-      - { label: "Intro Disciplines", name: "disciplines_intro", widget: "text", required: false }
-      - label: "Liste des disciplines"
-        name: "disciplines"
-        widget: "list"
-        required: false
+      - label: "📝 Section Présentation (L'entreprise)"
+        name: "group_pres"
+        widget: "object"
+        flat: true
+        collapsed: true
         fields:
-          - { label: "Titre", name: "title", widget: "string" }
-          - { label: "Sous-titre", name: "sub", widget: "string" }
-          - { label: "Image", name: "img", widget: "image" }
-          - { label: "Code CSS recadrage", name: "code", widget: "string", required: false }
+          - { label: "Sur-titre Présentation", name: "pres_label", widget: "string" }
+          - { label: "Titre Présentation", name: "pres_title", widget: "string" }
+          - { label: "Texte de présentation", name: "pres_text", widget: "text" }
+          - { label: "Image de présentation", name: "pres_img", widget: "string" }
+          - { label: "Cadrage CSS optionnel", name: "pres_img_pos", widget: "string", required: false }
 
-      - { label: "Sur-titre Missions", name: "missions_label", widget: "string" }
-      - { label: "Titre Missions", name: "missions_title", widget: "string" }
-      - { label: "Intro Missions (Optionnel)", name: "missions_intro", widget: "text", required: false }
-      
-      - label: "LISTE DE MISSIONS SIMPLES"
-        name: "missions"
-        widget: "list"
-        required: false
+      - label: "🏛️ Section Entités & Disciplines (Optionnel)"
+        name: "group_entities"
+        widget: "object"
+        flat: true
+        collapsed: true
         fields:
-          - { label: "Numéro", name: "num", widget: "string" }
-          - { label: "Titre de la mission", name: "title", widget: "string" }
-          - { label: "Description", name: "desc", widget: "text" }
-          - { label: "Icône au survol", name: "svg_icon", widget: "select", options: [{label: "🎯 Stratégie / Cible", value: "strategy"}, {label: "📱 Réseaux Sociaux", value: "social"}, {label: "🌐 Site Web / Tech", value: "web"}, {label: "✉️ Newsletter / Mail", value: "email"}, {label: "📢 Supports / Pub / Mégaphone", value: "megaphone"}, {label: "🤝 Partenariats / Equipe", value: "handshake"}, {label: "💰 Budget / Finance", value: "budget"}, {label: "🎥 Vidéo / Multimédia", value: "video"}, {label: "✍️ Rédaction / Article", value: "write"}, {label: "🔍 Recherche / Audit", value: "search"}], default: "strategy", required: false }
+          - { label: "Identifiant HTML section (ex: evenements ou entites)", name: "entites_id", widget: "string", default: "entites", required: false }
+          - { label: "Sur-titre Entités/Evenements", name: "entites_label", widget: "string", required: false }
+          - { label: "Titre Entités/Evenements", name: "entites_title", widget: "string", required: false }
+          - { label: "Intro Entités", name: "entites_intro", widget: "text", required: false }
+          - label: "Liste des agences / événements"
+            name: "entites"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Logo (Image)", name: "logo", widget: "image", required: false }
+              - { label: "OU Icône SVG pure", name: "svg_icon", widget: "string", required: false }
+              - { label: "Code marque CSS", name: "brand_code", widget: "string", required: false }
+              - { label: "Logo horizontal moyen ?", name: "is_wide", widget: "boolean", default: false }
+              - { label: "Logo horizontal grand ?", name: "is_wide_lg", widget: "boolean", default: false }
+          - { label: "Sur-titre Disciplines", name: "disciplines_label", widget: "string", required: false }
+          - { label: "Titre Disciplines", name: "disciplines_title", widget: "string", required: false }
+          - { label: "Intro Disciplines", name: "disciplines_intro", widget: "text", required: false }
+          - label: "Liste des disciplines"
+            name: "disciplines"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Sous-titre", name: "sub", widget: "string" }
+              - { label: "Image", name: "img", widget: "image" }
+              - { label: "Code CSS recadrage", name: "code", widget: "string", required: false }
 
-      - label: "OU GROUPES DE MISSIONS AVEC TITRES"
-        name: "mission_groups"
-        widget: "list"
-        required: false
+      - label: "🚀 Section Missions & Articles"
+        name: "group_missions"
+        widget: "object"
+        flat: true
+        collapsed: true
         fields:
-          - { label: "Titre du groupe", name: "title", widget: "string" }
-          - label: "Missions du groupe"
+          - { label: "Sur-titre Missions", name: "missions_label", widget: "string" }
+          - { label: "Titre Missions", name: "missions_title", widget: "string" }
+          - { label: "Intro Missions (Optionnel)", name: "missions_intro", widget: "text", required: false }
+          - label: "LISTE DE MISSIONS SIMPLES"
             name: "missions"
             widget: "list"
+            required: false
             fields:
               - { label: "Numéro", name: "num", widget: "string" }
               - { label: "Titre de la mission", name: "title", widget: "string" }
               - { label: "Description", name: "desc", widget: "text" }
               - { label: "Icône au survol", name: "svg_icon", widget: "select", options: [{label: "🎯 Stratégie / Cible", value: "strategy"}, {label: "📱 Réseaux Sociaux", value: "social"}, {label: "🌐 Site Web / Tech", value: "web"}, {label: "✉️ Newsletter / Mail", value: "email"}, {label: "📢 Supports / Pub / Mégaphone", value: "megaphone"}, {label: "🤝 Partenariats / Equipe", value: "handshake"}, {label: "💰 Budget / Finance", value: "budget"}, {label: "🎥 Vidéo / Multimédia", value: "video"}, {label: "✍️ Rédaction / Article", value: "write"}, {label: "🔍 Recherche / Audit", value: "search"}], default: "strategy", required: false }
-              
-      - { label: "Fond CSS Missions (ex: light ou white)", name: "missions_bg", widget: "string", default: "white", required: false }
-      - { label: "Sur-titre Articles", name: "articles_label", widget: "string", required: false }
-      - { label: "Titre Articles", name: "articles_title", widget: "string", required: false }
-      - { label: "Intro Articles", name: "articles_intro", widget: "text", required: false }
-      - label: "Liste des articles PDF"
-        name: "articles"
-        widget: "list"
-        required: false
-        fields:
-          - { label: "Titre de l'article", name: "title", widget: "string" }
-          - { label: "URL du PDF", name: "url", widget: "string" }
-          
-      - label: "Liste des ressources / liens"
-        name: "ressources"
-        widget: "list"
-        required: false
-        fields:
-          - { label: "Nom du bouton", name: "label", widget: "string" }
-          - { label: "URL du site", name: "url", widget: "string" }
-          - { label: "Classe CSS spécifique (ex: resource-gradient)", name: "custom_class", widget: "string", required: false }
-          - { label: "Couleur CSS", name: "color", widget: "string", required: false }
+          - label: "OU GROUPES DE MISSIONS AVEC TITRES"
+            name: "mission_groups"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Titre du groupe", name: "title", widget: "string" }
+              - label: "Missions du groupe"
+                name: "missions"
+                widget: "list"
+                fields:
+                  - { label: "Numéro", name: "num", widget: "string" }
+                  - { label: "Titre de la mission", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+                  - { label: "Icône au survol", name: "svg_icon", widget: "select", options: [{label: "🎯 Stratégie / Cible", value: "strategy"}, {label: "📱 Réseaux Sociaux", value: "social"}, {label: "🌐 Site Web / Tech", value: "web"}, {label: "✉️ Newsletter / Mail", value: "email"}, {label: "📢 Supports / Pub / Mégaphone", value: "megaphone"}, {label: "🤝 Partenariats / Equipe", value: "handshake"}, {label: "💰 Budget / Finance", value: "budget"}, {label: "🎥 Vidéo / Multimédia", value: "video"}, {label: "✍️ Rédaction / Article", value: "write"}, {label: "🔍 Recherche / Audit", value: "search"}], default: "strategy", required: false }
+          - { label: "Fond CSS Missions (ex: light ou white)", name: "missions_bg", widget: "string", default: "white", required: false }
+          - { label: "Sur-titre Articles", name: "articles_label", widget: "string", required: false }
+          - { label: "Titre Articles", name: "articles_title", widget: "string", required: false }
+          - { label: "Intro Articles", name: "articles_intro", widget: "text", required: false }
+          - label: "Liste des articles PDF"
+            name: "articles"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Titre de l'article", name: "title", widget: "string" }
+              - { label: "URL du PDF", name: "url", widget: "string" }
 
-      - { label: "URL de la page PRECEDENTE", name: "prev_url", widget: "string", required: false }
-      - { label: "Titre de la page PRECEDENTE", name: "prev_title", widget: "string", required: false }
-      - { label: "Couleur survol PRECEDENTE", name: "prev_color", widget: "string", required: false }
-
-      - { label: "URL de la page SUIVANTE", name: "next_url", widget: "string", required: false }
-      - { label: "Titre de la page SUIVANTE", name: "next_title", widget: "string", required: false }
-      - { label: "Couleur survol SUIVANTE", name: "next_color", widget: "string", required: false }
+      - label: "🔗 Section Navigation & Ressources"
+        name: "group_nav"
+        widget: "object"
+        flat: true
+        collapsed: true
+        fields:
+          - label: "Liste des ressources / liens"
+            name: "ressources"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Nom du bouton", name: "label", widget: "string" }
+              - { label: "URL du site", name: "url", widget: "string" }
+              - { label: "Classe CSS spécifique", name: "custom_class", widget: "string", required: false }
+              - { label: "Couleur CSS", name: "color", widget: "string", required: false }
+          - { label: "URL de la page PRECEDENTE", name: "prev_url", widget: "string", required: false }
+          - { label: "Titre de la page PRECEDENTE", name: "prev_title", widget: "string", required: false }
+          - { label: "Couleur survol PRECEDENTE", name: "prev_color", widget: "string", required: false }
+          - { label: "URL de la page SUIVANTE", name: "next_url", widget: "string", required: false }
+          - { label: "Titre de la page SUIVANTE", name: "next_title", widget: "string", required: false }
+          - { label: "Couleur survol SUIVANTE", name: "next_color", widget: "string", required: false }
