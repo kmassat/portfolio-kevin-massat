@@ -1,0 +1,35 @@
+- categorie: "Création graphique & vidéo"
+  skills:
+    - { name: "Canva", start_year: 2021, color: "#00C4CC", is_light: false }
+    - { name: "Illustrator", start_year: 2021, color: "#FF9A00", is_light: false }
+    - { name: "Premiere Pro", start_year: 2021, color: "#9999FF", is_light: false }
+    - { name: "After Effects", start_year: 2021, color: "#9999FF", is_light: false }
+    - { name: "Gimp", start_year: 2025, color: "#5C5543", is_light: false }
+    - { name: "InVideo", start_year: 2025, color: "#4B0082", is_light: false }
+
+- categorie: "Community management & web"
+  skills:
+    - { name: "Réseaux sociaux", start_year: 2021, color: "#E1306C", is_light: false }
+    - { name: "Meta Business Suite", start_year: 2023, color: "#0668E1", is_light: false }
+    - { name: "Agorapulse", start_year: 2025, color: "#FF6B35", is_light: false }
+    - { name: "WordPress", start_year: 2023, color: "#21759B", is_light: false }
+    - { name: "Brevo", start_year: 2025, color: "#0B996E", is_light: false }
+
+- categorie: "IA & automatisation"
+  skills:
+    - { name: "OpenAI / ChatGPT", start_year: 2023, color: "#10A37F", is_light: false }
+    - { name: "Claude", start_year: 2024, color: "#D97757", is_light: false }
+    - { name: "Arena ai", start_year: 2024, color: "#C8A87C", is_light: true }
+    - { name: "n8n", start_year: 2025, color: "#EA4B71", is_light: false }
+    - { name: "Gamma", start_year: 2025, color: "#8B5CF6", is_light: false }
+    - { name: "Thot SEO", start_year: 2025, color: "#D4A0C7", is_light: true }
+
+- categorie: "Bureautique & collaboration"
+  skills:
+    - { name: "Word", start_year: 2021, color: "#2B579A", is_light: false }
+    - { name: "Excel", start_year: 2021, color: "#217346", is_light: false }
+    - { name: "PowerPoint", start_year: 2021, color: "#D24726", is_light: false }
+    - { name: "Outlook", start_year: 2021, color: "#0078D4", is_light: false }
+    - { name: "Teams", start_year: 2021, color: "#6264A7", is_light: false }
+    - { name: "Slack", start_year: 2025, color: "#4A154B", is_light: false }
+    - { name: "Notion", start_year: 2025, color: "#AAAAAA", is_light: false }

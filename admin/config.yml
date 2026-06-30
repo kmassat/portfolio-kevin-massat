@@ -9,26 +9,43 @@ media_folder: "Images"
 public_folder: "Images"
 
 collections:
-  # 1. ACCUEIL & A PROPOS
+  # 1. ACCUEIL & COMPETENCES
   - name: "accueil"
-    label: "🏠 Page d'accueil & À propos"
+    label: "🏠 Accueil & Compétences"
     files:
-      - label: "Textes principaux"
+      - label: "📝 Textes d'accueil & Contacts"
         name: "textes"
         file: "_data/accueil.yml"
         fields:
           - { label: "Badge disponibilité", name: "badge", widget: "string" }
-          - { label: "Titre principal (HTML autorisé pour <br> et <em>)", name: "titre", widget: "string" }
+          - { label: "Titre principal", name: "titre", widget: "string" }
           - { label: "Sous-titre (Hero)", name: "sous_titre", widget: "text" }
           - { label: "Lien de votre CV (PDF)", name: "lien_cv", widget: "string" }
+          - { label: "Adresse e-mail", name: "email", widget: "string" }
+          - { label: "Numéro de téléphone brut (ex: 0629090692)", name: "tel_brut", widget: "string" }
+          - { label: "Téléphone formaté affichage (ex: 06.29.09.06.92)", name: "tel_format", widget: "string" }
+          - { label: "Lien profil LinkedIn", name: "linkedin", widget: "string" }
           - { label: "Paragraphe À propos 1", name: "apropos_1", widget: "text" }
           - { label: "Paragraphe À propos 2", name: "apropos_2", widget: "text" }
           - { label: "Paragraphe À propos 3", name: "apropos_3", widget: "text" }
-          - { label: "Lien de votre CV (PDF)", name: "lien_cv", widget: "string" }
-          - { label: "Adresse e-mail", name: "email", widget: "string" }
-          - { label: "Numéro de téléphone (ex: 0629090692)", name: "tel_brut", widget: "string" }
-          - { label: "Téléphone formaté affichage (ex: 06.29.09.06.92)", name: "tel_format", widget: "string" }
-          - { label: "Lien profil LinkedIn", name: "linkedin", widget: "string" }
+
+      - label: "⚡ Blocs de Compétences"
+        name: "competences"
+        file: "_data/competences.yml"
+        fields:
+          - label: "Liste des Catégories (Blocs)"
+            name: "categories" # Sveltia gère la liste racine automatiquement
+            widget: "list"
+            fields:
+              - { label: "Nom du bloc (ex: IA & automatisation)", name: "categorie", widget: "string" }
+              - label: "Compétences de ce bloc"
+                name: "skills"
+                widget: "list"
+                fields:
+                  - { label: "Nom de la compétence (ex: Canva)", name: "name", widget: "string" }
+                  - { label: "Année de début (ex: 2021 pour avoir 5 ans en 2026)", name: "start_year", widget: "number", value_type: "int" }
+                  - { label: "Couleur au survol (ex: #00C4CC)", name: "color", widget: "string" }
+                  - { label: "Couleur claire ? (Texte sombre au survol)", name: "is_light", widget: "boolean", default: false }
    # 2. EXPERIENCES (Pages complètes avec Audit SEO)
   - name: "experiences"
     label: "⭐ Mes Expériences"
