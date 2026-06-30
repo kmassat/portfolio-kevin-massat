@@ -24,7 +24,11 @@ collections:
           - { label: "Paragraphe À propos 1", name: "apropos_1", widget: "text" }
           - { label: "Paragraphe À propos 2", name: "apropos_2", widget: "text" }
           - { label: "Paragraphe À propos 3", name: "apropos_3", widget: "text" }
-
+          - { label: "Lien de votre CV (PDF)", name: "lien_cv", widget: "string" }
+          - { label: "Adresse e-mail", name: "email", widget: "string" }
+          - { label: "Numéro de téléphone (ex: 0629090692)", name: "tel_brut", widget: "string" }
+          - { label: "Téléphone formaté affichage (ex: 06.29.09.06.92)", name: "tel_format", widget: "string" }
+          - { label: "Lien profil LinkedIn", name: "linkedin", widget: "string" }
    # 2. EXPERIENCES (Pages complètes avec Audit SEO)
   - name: "experiences"
     label: "⭐ Mes Expériences"
