@@ -649,50 +649,18 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
     <h2 class="section-title fade-in">Mes compétences</h2>
     <p class="section-intro fade-in">Des outils maîtrisés au quotidien, acquis sur le terrain lors de mes différentes missions.</p>
     <div class="skills-grid">
+      {% for cat in site.data.competences %}
       <div class="skill-cat fade-in">
-        <div class="skill-cat-title">Création graphique & vidéo</div>
+        <div class="skill-cat-title">{{ cat.categorie }}</div>
         <div class="skill-pills">
-          <span class="skill-pill" data-brand="canva">Canva <span class="skill-years">5 ans</span></span>
-          <span class="skill-pill" data-brand="illustrator">Illustrator <span class="skill-years">5 ans</span></span>
-          <span class="skill-pill" data-brand="premiere">Premiere Pro <span class="skill-years">5 ans</span></span>
-          <span class="skill-pill" data-brand="aftereffects">After Effects <span class="skill-years">5 ans</span></span>
-          <span class="skill-pill" data-brand="gimp">Gimp <span class="skill-years">1 an</span></span>
-          <span class="skill-pill" data-brand="invideo">InVideo <span class="skill-years">1 an</span></span>
+          {% for skill in cat.skills %}
+          <span class="skill-pill" data-color="{{ skill.color }}" data-light="{{ skill.is_light }}">
+            {{ skill.name }} <span class="skill-years" data-start="{{ skill.start_year }}"></span>
+          </span>
+          {% endfor %}
         </div>
       </div>
-      <div class="skill-cat fade-in">
-        <div class="skill-cat-title">Community management & web</div>
-        <div class="skill-pills">
-          <span class="skill-pill" data-brand="reseaux">Réseaux sociaux <span class="skill-years">5 ans</span></span> 
-<span class="skill-pill" data-brand="meta">Meta Business Suite <span class="skill-years">3 ans</span></span>
-<span class="skill-pill" data-brand="agorapulse">Agorapulse <span class="skill-years">1 an</span></span>
-<span class="skill-pill" data-brand="wordpress">WordPress <span class="skill-years">3 ans</span></span>
-<span class="skill-pill" data-brand="brevo">Brevo <span class="skill-years">1 an</span></span>
-        </div>
-      </div>
-      <div class="skill-cat fade-in">
-        <div class="skill-cat-title">IA & automatisation</div>
-        <div class="skill-pills">
-<span class="skill-pill" data-brand="openai">OpenAI / ChatGPT <span class="skill-years">3 ans</span></span>
-<span class="skill-pill" data-brand="claude">Claude <span class="skill-years">2 ans</span></span>
-<span class="skill-pill" data-brand="arena">Arena ai <span class="skill-years">2 ans</span></span>
-<span class="skill-pill" data-brand="n8n">n8n <span class="skill-years">1 an</span></span>
-<span class="skill-pill" data-brand="gamma">Gamma <span class="skill-years">1 an</span></span>
-<span class="skill-pill" data-brand="thot">Thot SEO <span class="skill-years">1 an</span></span>
-        </div>
-      </div>
-      <div class="skill-cat fade-in">
-        <div class="skill-cat-title">Bureautique & collaboration</div>
-        <div class="skill-pills">
-<span class="skill-pill" data-brand="word">Word <span class="skill-years">5 ans</span></span>
-<span class="skill-pill" data-brand="excel">Excel <span class="skill-years">5 ans</span></span>
-<span class="skill-pill" data-brand="powerpoint">PowerPoint <span class="skill-years">5 ans</span></span>
-<span class="skill-pill" data-brand="outlook">Outlook <span class="skill-years">5 ans</span></span>
-<span class="skill-pill" data-brand="teams">Teams <span class="skill-years">5 ans</span></span>
-<span class="skill-pill" data-brand="slack">Slack <span class="skill-years">1 an</span></span>
-<span class="skill-pill" data-brand="notion">Notion <span class="skill-years">1 an</span></span>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -884,81 +852,39 @@ document.querySelectorAll('.exp-card').forEach((card, i) => {
   });
 });
 
-// SKILL PILLS — HOVER COULEUR MARQUE
-document.querySelectorAll('.skill-pill[data-brand]').forEach(function(pill){
-  var colors = {
-    canva:'#00C4CC', illustrator:'#FF9A00', premiere:'#9999FF', aftereffects:'#9999FF',
-    gimp:'#5C5543', invideo:'#4B0082', reseaux:'#E1306C', meta:'#0668E1',
-    agorapulse:'#FF6B35', wordpress:'#21759B', seo:'#4285F4', brevo:'#0B996E',
-    openai:'#10A37F', claude:'#D97757', arena:'#C8A87C', n8n:'#EA4B71',
-    gamma:'#8B5CF6', thot:'#D4A0C7', word:'#2B579A', excel:'#217346',
-    powerpoint:'#D24726', outlook:'#0078D4', teams:'#6264A7', slack:'#4A154B',
-    notion:'#AAAAAA'
-  };
-  var brand = pill.getAttribute('data-brand');
-  var color = colors[brand] || '#FFCD00';
-  var lightBrands = ['arena','thot'];
-  var isLight = lightBrands.indexOf(brand) !== -1;
-
-  pill.addEventListener('mouseenter', function(){
-    pill.style.borderColor = color;
-    pill.style.color = '#FFFFFF';
-    pill.style.background = color + '22';
-    var years = pill.querySelector('.skill-years');
-    if(years) years.style.color = color;
-  });
-
-  pill.addEventListener('mouseleave', function(){
-    pill.style.borderColor = '';
-    pill.style.color = '';
-    pill.style.background = '';
-    var years = pill.querySelector('.skill-years');
-    if(years) years.style.color = '';
-  });
-});
-
-// EXP CARDS — HOVER COULEUR
-document.querySelectorAll('.exp-card[data-color]').forEach(function(card){
-  var color = card.getAttribute('data-color');
-  var isGradient = color === 'gradient';
-  var hoverColor = isGradient ? '#E62934' : color;
-  var r = parseInt(hoverColor.slice(1,3), 16);
-  var g = parseInt(hoverColor.slice(3,5), 16);
-  var b = parseInt(hoverColor.slice(5,7), 16);
-
-  card.addEventListener('mouseenter', function(){
-    clearTimeout(card._barTimeout);
-
-    if(isGradient){
-      card.style.setProperty('--exp-bar-color', '#0000FE');
-    } else {
-      card.style.setProperty('--exp-bar-color', color);
-    }
-
-    card.style.borderColor = hoverColor;
-    card.style.boxShadow = '0 6px 20px rgba(' + r + ',' + g + ',' + b + ',.25)';
-
-    var typeEl = card.querySelector('.exp-type');
-    if(typeEl){
-      typeEl.style.background = isGradient ? '#0000FE' : hoverColor;
-      typeEl.style.color = '#FFFFFF';
-      typeEl.style.borderColor = 'transparent';
+// SKILL PILLS — HOVER COULEUR DYNAMIQUE DU CMS & CALCUL ANNEES
+document.addEventListener('DOMContentLoaded', function(){
+  var currentYear = new Date().getFullYear();
+  
+  // 1. Calcul automatique des années
+  document.querySelectorAll('.skill-years[data-start]').forEach(function(el){
+    var startYear = parseInt(el.getAttribute('data-start'), 10);
+    var diff = currentYear - startYear;
+    if(diff > 0){
+      el.textContent = diff + (diff > 1 ? ' ans' : ' an');
     }
   });
 
-  card.addEventListener('mouseleave', function(){
-    card.style.borderColor = '';
-    card.style.boxShadow = '';
+  // 2. Gestion du survol dynamique avec les couleurs du CMS
+  document.querySelectorAll('.skill-pill[data-color]').forEach(function(pill){
+    var color = pill.getAttribute('data-color') || '#FFCD00';
+    var isLight = pill.getAttribute('data-light') === 'true';
 
-    card._barTimeout = setTimeout(function(){
-      card.style.setProperty('--exp-bar-color', '');
-      var typeEl = card.querySelector('.exp-type');
-      if(typeEl){
-        typeEl.style.background = '';
-        typeEl.style.color = '';
-        typeEl.style.borderColor = '';
-      }
-    }, 300);
+    pill.addEventListener('mouseenter', function(){
+      pill.style.borderColor = color;
+      pill.style.color = isLight ? '#272727' : '#FFFFFF';
+      pill.style.background = color + '22';
+      var years = pill.querySelector('.skill-years');
+      if(years) years.style.color = isLight ? '#272727' : color;
+    });
+
+    pill.addEventListener('mouseleave', function(){
+      pill.style.borderColor = '';
+      pill.style.color = '';
+      pill.style.background = '';
+      var years = pill.querySelector('.skill-years');
+      if(years) years.style.color = '';
+    });
   });
 });
 
