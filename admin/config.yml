@@ -3,7 +3,7 @@ backend:
   repo: kmassat/portfolio-kevin-massat
   branch: main
 
-site_url: "https://kmassat.github.io/portfolio-kevin-massat/" # Débloque le bouton de prévisualisation !
+site_url: "https://kmassat.github.io" # Débloque le bouton de prévisualisation !
 
 media_folder: "Images" 
 public_folder: "Images"
@@ -52,7 +52,7 @@ collections:
     folder: "_experiences"
     create: true
     slug: "{{slug}}"
-    preview_path: "{{slug}}.html"
+    preview_path: "portfolio-kevin-massat/{{slug}}.html"
     summary: "💼 {{role}} chez {{company_short}} ({{period}})"
     fields:
       - { label: "Balise Titre SEO", name: "meta_title", widget: "string", maxlength: 60 }
