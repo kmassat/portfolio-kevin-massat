@@ -30,6 +30,17 @@
         h2 { font-size: 1.8rem; margin-top: 2rem; }
         strong { font-weight: 600; color: #000000; }
       `, { raw: true });
+      // CALCUL AUTOMATIQUE DES ANNEES D'EXPERIENCE (Mise à jour chaque 1er Janvier)
+document.addEventListener('DOMContentLoaded', function(){
+  var currentYear = new Date().getFullYear();
+  document.querySelectorAll('.skill-years[data-start]').forEach(function(el){
+    var startYear = parseInt(el.getAttribute('data-start'), 10);
+    var diff = currentYear - startYear;
+    if(diff > 0){
+      el.textContent = diff + (diff > 1 ? ' ans' : ' an');
+    }
+  });
+});
     </script>
   </body>
 </html>
