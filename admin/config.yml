@@ -131,7 +131,7 @@ collections:
           - { label: "Numéro", name: "num", widget: "string" }
           - { label: "Titre de la mission", name: "title", widget: "string" }
           - { label: "Description", name: "desc", widget: "text" }
-          - { label: "Icône au survol", name: "svg_icon", widget: "select", options: [{label: "🎯 Stratégie / Cible", value: "strategy"}, {label: "📱 Réseaux Sociaux", value: "social"}, {label: "🌐 Site Web / Tech", value: "web"}, {label: "✉️ Newsletter / Mail", value: "email"}, {label: "📢 Supports / Pub / Mégaphone", value: "megaphone"}, {label: "🤝 Partenariats / Equipe", value: "handshake"}, {label: "💰 Budget / Finance", value: "budget"}, {label: "🎥 Vidéo / Multimédia", value: "video"}, {label: "✍️ Rédaction / Article", value: "write"}, {label: "🔍 Recherche / Audit", value: "search"}], default: "strategy", required: false }
+          - { label: "Code SVG survol (ex: <path d=.../>)", name: "svg_icon", widget: "string", required: false }
 
       - label: "OU GROUPES DE MISSIONS AVEC TITRES"
         name: "mission_groups"
@@ -146,7 +146,7 @@ collections:
               - { label: "Numéro", name: "num", widget: "string" }
               - { label: "Titre de la mission", name: "title", widget: "string" }
               - { label: "Description", name: "desc", widget: "text" }
-              - { label: "Icône au survol", name: "svg_icon", widget: "select", options: [{label: "🎯 Stratégie / Cible", value: "strategy"}, {label: "📱 Réseaux Sociaux", value: "social"}, {label: "🌐 Site Web / Tech", value: "web"}, {label: "✉️ Newsletter / Mail", value: "email"}, {label: "📢 Supports / Pub / Mégaphone", value: "megaphone"}, {label: "🤝 Partenariats / Equipe", value: "handshake"}, {label: "💰 Budget / Finance", value: "budget"}, {label: "🎥 Vidéo / Multimédia", value: "video"}, {label: "✍️ Rédaction / Article", value: "write"}, {label: "🔍 Recherche / Audit", value: "search"}], default: "strategy", required: false }
+              - { label: "Code SVG survol (ex: <path d=.../>)", name: "svg_icon", widget: "string", required: false }
 
       - { label: "Fond CSS Missions", name: "missions_bg", widget: "string", default: "white", required: false }
       - { label: "Sur-titre Articles", name: "articles_label", widget: "string", required: false }
