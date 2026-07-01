@@ -3,7 +3,9 @@ backend:
   repo: kmassat/portfolio-kevin-massat
   branch: main
 
-site_url: "https://kmassat.github.io" # Débloque le bouton de prévisualisation !
+app_title: "Kévin Massat — Espace d'administration"
+logo_url: "https://kmassat.github.io/portfolio-kevin-massat/Images/icone_portfolio.png"
+site_url: "https://kmassat.github.io"
 
 media_folder: "Images" 
 public_folder: "Images"
