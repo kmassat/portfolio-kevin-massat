@@ -369,7 +369,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
       <div class="entite-card fade-in" {% if entite.brand_code %}data-brand="{{ entite.brand_code }}"{% endif %}>
         <div class="entite-icon {% if entite.is_wide_lg %}icon-wide-lg{% elsif entite.is_wide %}icon-wide{% endif %}">
           {% if entite.svg_icon %}
-            <svg viewBox="0 0 24 24">{{ entite.svg_icon }}</svg>
+            <svg viewBox="0 0 24 24">{% include icon.html code=entite.svg_icon %}</svg>
           {% else %}
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <img src="{{ entite.logo }}" alt="{{ entite.title }}" loading="lazy">
@@ -420,7 +420,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
               <span>{{ mission.num }}</span>
               <div class="mission-icon-hover">
                 <svg viewBox="0 0 24 24">
-                  {% if mission.svg_icon %}{{ mission.svg_icon }}{% else %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>{% endif %}
+                  {% if mission.svg_icon %}{% include icon.html code=mission.svg_icon %}{% else %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>{% endif %}
                 </svg>
               </div>
             </div>
@@ -440,7 +440,7 @@ canvas#trailCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-ev
             <span>{{ mission.num }}</span>
             <div class="mission-icon-hover">
               <svg viewBox="0 0 24 24">
-                {% if mission.svg_icon %}{{ mission.svg_icon }}{% else %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>{% endif %}
+                {% if mission.svg_icon %}{% include icon.html code=mission.svg_icon %}{% else %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>{% endif %}
               </svg>
             </div>
           </div>
