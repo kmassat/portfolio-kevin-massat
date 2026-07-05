@@ -26,11 +26,11 @@ missions:
   - num: "01"
     title: "Stratégie sponsors"
     desc: "Élaboration d'une stratégie permettant d'attirer de nouveaux sponsors ou de fidéliser ceux déjà présents."
-    svg_icon: '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>'
+    svg_icon: budget
   - num: "02"
     title: "Communication digitale"
     desc: "Développement de la communication de l'association sur son site internet et ses réseaux sociaux."
-    svg_icon: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>'
+    svg_icon: globe
 
 ressources:
   - label: "Site de l'ASV Lavaur"

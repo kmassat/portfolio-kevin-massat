@@ -42,19 +42,19 @@ missions:
   - num: "01"
     title: "Relations clubs & partenaires"
     desc: "Gestion des relations avec les clubs et partenaires : appels, envoi de courriels, suivi des échanges."
-    svg_icon: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.1 6.1l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>'
+    svg_icon: phone
   - num: "02"
     title: "Supports de communication"
     desc: "Création et programmation des supports de communication pour les événements et activités du centre."
-    svg_icon: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>'
+    svg_icon: cube
   - num: "03"
     title: "Préparation d'événements"
     desc: "Participation à des réunions de préparation d'événements, notamment du Tournoi Européen U21."
-    svg_icon: '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'
+    svg_icon: calendar
   - num: "04"
     title: "Gestion des achats"
     desc: "Inventaire des équipements nécessaires à l'organisation du Tournoi Européen U21 et pour l'accueil des stagiaires à la CTB Academy."
-    svg_icon: '<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>'
+    svg_icon: cart
 
 ressources:
   - label: "Site du Centre Technique Bretagne"

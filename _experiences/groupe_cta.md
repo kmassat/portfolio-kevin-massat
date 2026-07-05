@@ -58,27 +58,27 @@ missions:
   - num: "01"
     title: "Refonte des sites internet"
     desc: "Refonte des sites internet et réflexion sur la commercialisation des offres : parcours utilisateur, référencement SEO, identité visuelle."
-    svg_icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>'
+    svg_icon: web
   - num: "02"
     title: "Newsletters & base de contacts"
     desc: "Création des newsletters et qualification de la liste de contacts pour des campagnes ciblées et performantes."
-    svg_icon: '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>'
+    svg_icon: mail
   - num: "03"
     title: "Stratégie réseaux sociaux"
     desc: "Élaboration de la stratégie de communication sur les réseaux sociaux : planning éditorial, création de contenu, suivi des performances."
-    svg_icon: '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'
+    svg_icon: social
   - num: "04"
     title: "Supports de communication"
     desc: "Préparation des supports physiques et digitaux pour l'ensemble des entités du groupe."
-    svg_icon: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>'
+    svg_icon: cube
   - num: "05"
     title: "Communication interne"
     desc: "Communication et animation en interne, reporting des performances et coordination entre les équipes."
-    svg_icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
+    svg_icon: team
   - num: "06"
     title: "Stratégie RSE"
     desc: "Mise en place d'une stratégie visant à lister les points d'amélioration, préciser le type de document ou de preuve attendu, proposer une méthodologie structurée pour y répondre de manière efficace et organiser les actions."
-    svg_icon: '<path d="M20 4c-7 0-12 5-12 12 0 2.8 2.2 5 5 5 7 0 11-6 11-17z"/><path d="M8 20c2-3 5-6 9-8"/>'
+    svg_icon: leaf
 
 ressources:
   - label: "SOP Events"

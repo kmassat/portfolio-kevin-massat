@@ -26,19 +26,19 @@ entites_intro: "Faisant partie d'un réseau national de 47 Villages, c'est un ac
 entites:
   - title: "Créer de la valeur sur les territoires"
     desc: "Favoriser l'émergence de projets innovants ancrés dans l'économie locale."
-    svg_icon: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'
+    svg_icon: pin
     brand_code: "village"
   - title: "Décentraliser l'innovation"
     desc: "Rendre l'innovation accessible au-delà des grandes métropoles."
-    svg_icon: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>'
+    svg_icon: star
     brand_code: "village"
   - title: "Répondre aux enjeux de demain"
     desc: "Accompagner la transformation des entreprises face aux défis actuels."
-    svg_icon: '<path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/>'
+    svg_icon: chart
     brand_code: "village"
   - title: "Créer un avenir durable"
     desc: "Soutenir des projets à impact positif pour un développement responsable."
-    svg_icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'
+    svg_icon: shield
     brand_code: "village"
 
 missions_label: "Mon rôle"
@@ -48,27 +48,27 @@ missions:
   - num: "01"
     title: "Plan d'action réseaux sociaux & site internet"
     desc: "Développement d'un plan d'action complet pour les réseaux sociaux ainsi que pour le site internet du Village by CA."
-    svg_icon: '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'
+    svg_icon: social
   - num: "02"
     title: "Élaboration du site internet"
     desc: "Conception et mise en ligne du site internet du Village by CA, de la réflexion stratégique au déploiement."
-    svg_icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>'
+    svg_icon: web
   - num: "03"
     title: "Supports visuels & rédaction"
     desc: "Réalisation des supports visuels pour les publications ainsi que rédaction des articles et du contenu."
-    svg_icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>'
+    svg_icon: image
   - num: "04"
     title: "Recherche de partenaires"
     desc: "Conception d'une plaquette commerciale et démarchage physique et téléphonique pour développer le réseau de partenaires."
-    svg_icon: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/>'
+    svg_icon: partners
   - num: "05"
     title: "Réflexion marketing"
     desc: "Réflexion marketing sur la commercialisation des offres et positionnement des services."
-    svg_icon: '<path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/>'
+    svg_icon: chart
   - num: "06"
     title: "Team Ambassadeurs jeunes"
     desc: "Élaboration d'un plan d'action et rôle de visage principal : tournage de vidéos promotionnelles, constitution de l'équipe, publications."
-    svg_icon: '<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>'
+    svg_icon: video
 
 ressources:
   - label: "Site du Crédit Agricole Sud Méditerranée"
