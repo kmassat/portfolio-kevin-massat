@@ -202,7 +202,6 @@ collections:
               - { label: "Titre de la mission", name: "title", widget: "string" }
               - { label: "Description", name: "desc", widget: "text" }
               - label: "Icône de survol"
-<<<<<<< HEAD
             name: "svg_icon"
             widget: "select"
             required: false
@@ -230,34 +229,6 @@ collections:
               - { label: "📊 Stats / Barres", value: "chart" }
               - { label: "🛡️ Bouclier / Protection", value: "shield" }
               - { label: "📞 Téléphone / Contact", value: "phone" }
-=======
-                name: "svg_icon"
-                widget: "select"
-                required: false
-                options:
-                  - { label: "— Aucune —", value: "" }
-                  - { label: "🌐 Site web / Refonte", value: "web" }
-                  - { label: "📧 Newsletter / Email", value: "mail" }
-                  - { label: "📱 Réseaux sociaux", value: "social" }
-                  - { label: "📸 Instagram", value: "instagram" }
-                  - { label: "📦 Supports / Print", value: "cube" }
-                  - { label: "👥 Communication interne", value: "team" }
-                  - { label: "🌿 RSE", value: "leaf" }
-                  - { label: "🌍 Stratégie / International", value: "globe" }
-                  - { label: "💰 Budget / Finance", value: "budget" }
-                  - { label: "🤝 Partenaires", value: "partners" }
-                  - { label: "🎥 Vidéo", value: "video" }
-                  - { label: "📷 Événement / Photo", value: "camera" }
-                  - { label: "📅 Calendrier / Planning", value: "calendar" }
-                  - { label: "🛒 Achats / Logistique", value: "cart" }
-                  - { label: "🖼️ Visuel / Image", value: "image" }
-                  - { label: "📄 Document / Article", value: "doc" }
-                  - { label: "🔍 Recherche / Analyse", value: "search" }
-                  - { label: "📍 Localisation", value: "pin" }
-                  - { label: "⭐ Étoile / Excellence", value: "star" }
-                  - { label: "📊 Stats / Barres", value: "chart" }
-                  - { label: "🛡️ Bouclier / Protection", value: "shield" }
->>>>>>> 99d0f74be2baf6ba6574146d9287043cf339e05a
 
       - { label: "Fond CSS Missions", name: "missions_bg", widget: "string", default: "white", required: false }
       - { label: "Sur-titre Articles", name: "articles_label", widget: "string", required: false }
