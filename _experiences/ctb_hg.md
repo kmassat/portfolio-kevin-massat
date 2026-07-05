@@ -12,6 +12,7 @@ period: "Juin — Août 2022"
 location: "Saint-Brieuc"
 contract_type: "Stage"
 contract_class: "type-stage"
+hover_color: "#BD9E54"
 
 pres_label: "Le centre"
 pres_title: "Centre Technique Bretagne Henri Guérin"

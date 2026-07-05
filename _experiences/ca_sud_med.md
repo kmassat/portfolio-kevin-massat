@@ -13,6 +13,7 @@ period: "Sept. 2024 — Sept. 2025"
 location: "Perpignan"
 contract_type: "Alternance"
 contract_class: "type-alt"
+hover_color: "#308276"
 
 pres_label: "L'entreprise"
 pres_title: "Crédit Agricole Sud Méditerranée"

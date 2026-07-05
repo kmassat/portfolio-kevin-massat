@@ -12,6 +12,7 @@ period: "Sept. 2022 — Sept. 2023"
 location: "Balma"
 contract_type: "Alternance"
 contract_class: "type-alt"
+hover_color: "#020065"
 
 pres_label: "L'association"
 pres_title: "La Ligue Motocycliste Occitanie"

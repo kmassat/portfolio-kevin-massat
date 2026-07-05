@@ -12,6 +12,7 @@ period: "Sept. 2021 — Sept. 2023"
 location: "Toulouse"
 contract_type: "Bénévolat"
 contract_class: "type-benevolat"
+hover_color: "#973242"
 
 pres_label: "Le journal"
 pres_title: "Le Décodé"
