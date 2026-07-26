@@ -19,7 +19,8 @@ collections:
         name: "textes"
         file: "_data/accueil.yml"
         fields:
-          - { label: "Badge disponibilité", name: "badge", widget: "string" }
+          - { label: "Badge disponibilité (header)", name: "badge", widget: "string" }
+          - { label: "Badge sous la photo", name: "hero_badge", widget: "string", default: "✓ Disponible très prochainement" }
           - { label: "Titre principal", name: "titre", widget: "string" }
           - { label: "Sous-titre (Hero)", name: "sous_titre", widget: "text" }
           - { label: "Lien de votre CV (PDF)", name: "lien_cv", widget: "string" }
