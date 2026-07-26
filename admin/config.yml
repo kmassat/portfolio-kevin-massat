@@ -31,7 +31,6 @@ collections:
           - { label: "Paragraphe À propos 1", name: "apropos_1", widget: "text" }
           - { label: "Paragraphe À propos 2", name: "apropos_2", widget: "text" }
           - { label: "Paragraphe À propos 3", name: "apropos_3", widget: "text" }
-          - { label: "Image de la section À propos", name: "apropos_img", widget: "image", required: false }
 
       - label: "⚡ Blocs de Compétences"
         name: "competences"
