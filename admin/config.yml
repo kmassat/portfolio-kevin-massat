@@ -20,8 +20,13 @@ collections:
         file: "_data/accueil.yml"
         fields:
           - { label: "Badge disponibilité (header)", name: "badge", widget: "string" }
+          - { label: "Couleur du point badge", name: "badge_color", widget: "string", default: "#22C55E" }
+          - { label: "Couleur du point badge", name: "badge_color", widget: "string", default: "#22C55E" }
+          - { label: "Couleur du point badge", name: "badge_color", widget: "string", default: "#22C55E" }
+          - { label: "Couleur du point badge", name: "badge_color", widget: "string", default: "#22C55E" }
+          - { label: "Couleur du point badge", name: "badge_color", widget: "string", default: "#22C55E" }
+          - { label: "Couleur du point badge", name: "badge_color", widget: "string", default: "#22C55E" }
           - { label: "Badge sous la photo", name: "hero_badge", widget: "string", default: "✓ Disponible très prochainement" }
-          - { label: "Photo de profil (Hero)", name: "photo_profil", widget: "image" }
           - { label: "Photo de profil (Hero)", name: "photo_profil", widget: "image" }
           - { label: "Titre principal", name: "titre", widget: "string" }
           - { label: "Sous-titre (Hero)", name: "sous_titre", widget: "text" }
