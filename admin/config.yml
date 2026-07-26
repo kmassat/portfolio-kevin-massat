@@ -20,15 +20,14 @@ collections:
         file: "_data/accueil.yml"
         preview_path: "portfolio-kevin-massat/"
         fields:
-          - { label: "Badge disponibilité (header)", name: "badge", widget: "string" }
           - label: "Statut de disponibilité"
-            name: "badge_color"
+            name: "badge_status"
             widget: "select"
             options:
-              - { label: "🟢 Disponible", value: "#22C55E" }
-              - { label: "🔴 Indisponible", value: "#EF4444" }
-              - { label: "🟠 Bientôt disponible", value: "#F59E0B" }
-              - { label: "🔵 À l'écoute d'opportunités", value: "#3B82F6" }
+              - { label: "🟢 Disponible", value: "disponible" }
+              - { label: "🔴 Indisponible", value: "indisponible" }
+              - { label: "🟠 Bientôt disponible", value: "bientot" }
+              - { label: "🔵 À l'écoute d'opportunités", value: "opportunites" }
           - { label: "Badge sous la photo", name: "hero_badge", widget: "string", default: "✓ Disponible très prochainement" }
           - { label: "Photo de profil (Hero)", name: "photo_profil", widget: "image" }
           - { label: "Titre principal", name: "titre", widget: "string" }
